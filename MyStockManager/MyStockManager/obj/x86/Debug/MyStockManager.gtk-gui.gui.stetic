@@ -1,0 +1,674 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<stetic-interface>
+  <configuration>
+    <images-root-path>..</images-root-path>
+  </configuration>
+  <import>
+    <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <widget-library name="../bin/Debug/MyStockManager.exe" internal="true" />
+  </import>
+  <widget class="Gtk.Window" id="MainWindow" design-size="855 623">
+    <action-group name="Default">
+      <action id="DokumentiAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Dokumenti</property>
+        <property name="ShortLabel" translatable="yes">Dokumenti</property>
+      </action>
+      <action id="SuradniciAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Suradnici</property>
+        <property name="ShortLabel" translatable="yes">Suradnici</property>
+      </action>
+      <action id="ArtikliAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Artikli</property>
+        <property name="ShortLabel" translatable="yes">Artikli</property>
+      </action>
+      <action id="StatistikaAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Statistika</property>
+        <property name="ShortLabel" translatable="yes">Statistika</property>
+      </action>
+      <action id="PrimkeAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Primke</property>
+        <property name="ShortLabel" translatable="yes">Primke</property>
+      </action>
+      <action id="OtpremniceAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Otpremnice</property>
+        <property name="ShortLabel" translatable="yes">Otpremnice</property>
+      </action>
+      <action id="DobavljaiAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Dobavljači</property>
+        <property name="ShortLabel" translatable="yes">Dobavljači</property>
+      </action>
+      <action id="PrijevozniciAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Prijevoznici</property>
+        <property name="ShortLabel" translatable="yes">Prijevoznici</property>
+      </action>
+      <action id="ZaposleniciAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Zaposlenici</property>
+        <property name="ShortLabel" translatable="yes">Zaposlenici</property>
+      </action>
+      <action id="MjestaAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Mjesta</property>
+        <property name="ShortLabel" translatable="yes">Mjesta</property>
+      </action>
+      <action id="PregledAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Pregled</property>
+        <property name="ShortLabel" translatable="yes">Pregled</property>
+        <signal name="Activated" handler="onClick_Pregled" />
+      </action>
+      <action id="KategorijeAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Kategorije</property>
+        <property name="ShortLabel" translatable="yes">Kategorije</property>
+      </action>
+      <action id="JediniceMjereAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Jedinice mjere</property>
+        <property name="ShortLabel" translatable="yes">Jedinice mjere</property>
+      </action>
+      <action id="EvidencijaPromjenaAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Evidencija promjena</property>
+        <property name="ShortLabel" translatable="yes">Evidencija promjena</property>
+      </action>
+      <action id="ProgramAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Program</property>
+        <property name="ShortLabel" translatable="yes">Program</property>
+      </action>
+      <action id="IzlazAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Izlaz</property>
+        <property name="ShortLabel" translatable="yes">Izlaz</property>
+        <signal name="Activated" handler="onClick_Izlaz" />
+      </action>
+    </action-group>
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">MainWindow</property>
+    <property name="WindowPosition">CenterAlways</property>
+    <signal name="DeleteEvent" handler="OnDeleteEvent" />
+    <child>
+      <widget class="Gtk.VBox" id="vbox1">
+        <property name="MemberName" />
+        <property name="Spacing">6</property>
+        <child>
+          <widget class="Gtk.MenuBar" id="menubar2">
+            <property name="MemberName" />
+            <node name="menubar2" type="Menubar">
+              <node type="Menu" action="ProgramAction">
+                <node type="Menuitem" action="IzlazAction" />
+              </node>
+              <node type="Menu" action="DokumentiAction">
+                <node type="Menuitem" action="PrimkeAction" />
+                <node type="Menuitem" action="OtpremniceAction" />
+              </node>
+              <node type="Menu" action="SuradniciAction">
+                <node type="Menuitem" action="DobavljaiAction" />
+                <node type="Menuitem" action="PrijevozniciAction" />
+                <node type="Menuitem" action="ZaposleniciAction" />
+                <node type="Menuitem" action="MjestaAction" />
+              </node>
+              <node type="Menu" action="ArtikliAction">
+                <node type="Menuitem" action="PregledAction" />
+                <node type="Menuitem" action="KategorijeAction" />
+                <node type="Menuitem" action="JediniceMjereAction" />
+              </node>
+              <node type="Menu" action="StatistikaAction">
+                <node type="Menuitem" action="EvidencijaPromjenaAction" />
+              </node>
+            </node>
+          </widget>
+          <packing>
+            <property name="Position">0</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="MyStockManager.ArtikliWindow" design-size="994 575">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">Artikli</property>
+    <property name="WindowPosition">CenterAlways</property>
+    <property name="Gravity">Center</property>
+    <child>
+      <widget class="Gtk.VBox" id="vbox3">
+        <property name="MemberName" />
+        <property name="Spacing">6</property>
+        <child>
+          <widget class="Gtk.HBox" id="hbox2">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.Button" id="btnNoviArtikl">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="Type">TextOnly</property>
+                <property name="Label" translatable="yes">Novi artikl</property>
+                <property name="UseUnderline">True</property>
+                <signal name="Clicked" handler="btnUredi_onClick" />
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+                <property name="Padding">15</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Button" id="btnUredi">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="Type">TextOnly</property>
+                <property name="Label" translatable="yes">Uredi označenog</property>
+                <property name="UseUnderline">True</property>
+              </widget>
+              <packing>
+                <property name="Position">1</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+                <property name="Padding">15</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Button" id="btnObrisi">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="Type">TextOnly</property>
+                <property name="Label" translatable="yes">Obriši označenog</property>
+                <property name="UseUnderline">True</property>
+              </widget>
+              <packing>
+                <property name="Position">2</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+                <property name="Padding">15</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">0</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+            <property name="Padding">15</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
+            <property name="MemberName" />
+            <property name="ShadowType">In</property>
+            <child>
+              <widget class="Gtk.NodeView" id="nodeview1">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="ShowScrollbars">True</property>
+              </widget>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">1</property>
+            <property name="AutoSize">True</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.HBox" id="hbox1">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <placeholder />
+            </child>
+            <child>
+              <widget class="Gtk.Button" id="btnZatvori">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="Type">TextOnly</property>
+                <property name="Label" translatable="yes">Zatvori</property>
+                <property name="UseUnderline">True</property>
+                <signal name="Clicked" handler="btnZatvori_onClick" />
+              </widget>
+              <packing>
+                <property name="PackType">End</property>
+                <property name="Position">1</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+                <property name="Padding">15</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">2</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+            <property name="Padding">15</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="MyStockManager.ArtiklNewWindow" design-size="644 511">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">Novi artikl</property>
+    <property name="WindowPosition">CenterAlways</property>
+    <property name="Gravity">Center</property>
+    <child>
+      <widget class="Gtk.VBox" id="vbox1">
+        <property name="MemberName" />
+        <property name="Spacing">6</property>
+        <child>
+          <widget class="Gtk.HBox" id="hbox2">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.Label" id="label1">
+                <property name="MemberName" />
+                <property name="WidthRequest">120</property>
+                <property name="Ypad">15</property>
+                <property name="Xalign">0</property>
+                <property name="LabelProp" translatable="yes">Naziv artikla:</property>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+                <property name="Padding">15</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Entry" id="txtNaziv">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="IsEditable">True</property>
+                <property name="InvisibleChar">•</property>
+              </widget>
+              <packing>
+                <property name="Position">1</property>
+                <property name="AutoSize">True</property>
+                <property name="Padding">15</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">0</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.HBox" id="hbox3">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.Label" id="label2">
+                <property name="MemberName" />
+                <property name="WidthRequest">120</property>
+                <property name="Ypad">15</property>
+                <property name="Xalign">0</property>
+                <property name="LabelProp" translatable="yes">Kategorija:</property>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+                <property name="Padding">15</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.ComboBox" id="cbKategorija">
+                <property name="MemberName" />
+                <property name="WidthRequest">200</property>
+                <property name="IsTextCombo">True</property>
+                <property name="Items" translatable="yes" />
+              </widget>
+              <packing>
+                <property name="Position">1</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+                <property name="Padding">15</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">1</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.HBox" id="hbox4">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.Label" id="label3">
+                <property name="MemberName" />
+                <property name="WidthRequest">120</property>
+                <property name="Ypad">15</property>
+                <property name="Xalign">0</property>
+                <property name="LabelProp" translatable="yes">Opis:</property>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+                <property name="Padding">15</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
+                <property name="MemberName" />
+                <property name="HscrollbarPolicy">Never</property>
+                <property name="ShadowType">In</property>
+                <child>
+                  <widget class="Gtk.TextView" id="txtOpis">
+                    <property name="MemberName" />
+                    <property name="CanFocus">True</property>
+                    <property name="ShowScrollbars">True</property>
+                    <property name="Text" translatable="yes" />
+                    <property name="WrapMode">Word</property>
+                  </widget>
+                </child>
+              </widget>
+              <packing>
+                <property name="Position">1</property>
+                <property name="AutoSize">True</property>
+                <property name="Padding">15</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">2</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.HBox" id="hbox5">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.Label" id="label4">
+                <property name="MemberName" />
+                <property name="WidthRequest">120</property>
+                <property name="Ypad">15</property>
+                <property name="Xalign">0</property>
+                <property name="LabelProp" translatable="yes">Cijena (kn):</property>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+                <property name="Padding">15</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Entry" id="txtCijena">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="IsEditable">True</property>
+                <property name="InvisibleChar">•</property>
+              </widget>
+              <packing>
+                <property name="Position">1</property>
+                <property name="AutoSize">True</property>
+                <property name="Padding">15</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">3</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.HBox" id="hbox6">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.Label" id="label5">
+                <property name="MemberName" />
+                <property name="WidthRequest">120</property>
+                <property name="Ypad">15</property>
+                <property name="Xalign">0</property>
+                <property name="LabelProp" translatable="yes">Stanje:</property>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+                <property name="Padding">15</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Entry" id="txtStanje">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="IsEditable">True</property>
+                <property name="InvisibleChar">•</property>
+              </widget>
+              <packing>
+                <property name="Position">1</property>
+                <property name="AutoSize">True</property>
+                <property name="Padding">15</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">4</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.HBox" id="hbox7">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.Label" id="label6">
+                <property name="MemberName" />
+                <property name="WidthRequest">120</property>
+                <property name="Ypad">15</property>
+                <property name="Xalign">0</property>
+                <property name="LabelProp" translatable="yes">Zalihe (min):</property>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+                <property name="Padding">15</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Entry" id="txtZaliheMin">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="IsEditable">True</property>
+                <property name="InvisibleChar">•</property>
+              </widget>
+              <packing>
+                <property name="Position">1</property>
+                <property name="AutoSize">True</property>
+                <property name="Padding">15</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">5</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.HBox" id="hbox8">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.Label" id="label7">
+                <property name="MemberName" />
+                <property name="WidthRequest">120</property>
+                <property name="Ypad">15</property>
+                <property name="Xalign">0</property>
+                <property name="LabelProp" translatable="yes">Zalihe (max):</property>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+                <property name="Padding">15</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Entry" id="txtZaliheMax">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="IsEditable">True</property>
+                <property name="InvisibleChar">•</property>
+              </widget>
+              <packing>
+                <property name="Position">1</property>
+                <property name="AutoSize">True</property>
+                <property name="Padding">15</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">6</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.HBox" id="hbox9">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.Label" id="label8">
+                <property name="MemberName" />
+                <property name="WidthRequest">120</property>
+                <property name="Ypad">15</property>
+                <property name="Xalign">0</property>
+                <property name="LabelProp" translatable="yes">Jedinica mjere:</property>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+                <property name="Padding">15</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.ComboBox" id="cbJedinicaMjere">
+                <property name="MemberName" />
+                <property name="WidthRequest">200</property>
+                <property name="IsTextCombo">True</property>
+                <property name="Items" translatable="yes" />
+              </widget>
+              <packing>
+                <property name="Position">1</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+                <property name="Padding">15</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">7</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.HBox" id="hbox10">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.Button" id="btnSpremi">
+                <property name="MemberName" />
+                <property name="WidthRequest">80</property>
+                <property name="CanFocus">True</property>
+                <property name="Type">TextOnly</property>
+                <property name="Label" translatable="yes">Spremi</property>
+                <property name="UseUnderline">True</property>
+                <signal name="Clicked" handler="btnSpremi_onClick" />
+              </widget>
+              <packing>
+                <property name="PackType">End</property>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+                <property name="Padding">15</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Button" id="btnOdustani">
+                <property name="MemberName" />
+                <property name="WidthRequest">80</property>
+                <property name="CanFocus">True</property>
+                <property name="Type">TextOnly</property>
+                <property name="Label" translatable="yes">Odustani</property>
+                <property name="UseUnderline">True</property>
+                <signal name="Clicked" handler="btnOdustani_onClick" />
+              </widget>
+              <packing>
+                <property name="PackType">End</property>
+                <property name="Position">1</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="PackType">End</property>
+            <property name="Position">8</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+            <property name="Padding">15</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+</stetic-interface>
