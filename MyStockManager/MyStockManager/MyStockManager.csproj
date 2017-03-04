@@ -77,10 +77,10 @@
     <Compile Include="gtk-gui\MyStockManager.ArtikliWindow.cs" />
     <Compile Include="Artikl.cs" />
     <Compile Include="Dobavljac.cs" />
-    <Compile Include="ArtiklNewWindow.cs" />
-    <Compile Include="gtk-gui\MyStockManager.ArtiklNewWindow.cs" />
     <Compile Include="Kategorija.cs" />
     <Compile Include="JedinicaMjere.cs" />
+    <Compile Include="ArtiklNewEditWindow.cs" />
+    <Compile Include="gtk-gui\MyStockManager.ArtiklNewEditWindow.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

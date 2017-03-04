@@ -1,4 +1,5 @@
 ﻿using System;
+using Gtk;
 using System.Collections.Generic;
 using static System.Math;
 
@@ -13,6 +14,7 @@ namespace MyStockManager
 			this.Build ();
 
 			prepareNodeView ();
+
 
 		}
 
@@ -47,19 +49,61 @@ namespace MyStockManager
 
 		protected void btnNovi_onClick (object sender, EventArgs e)
 		{
-			ArtiklNewWindow frmArtiklNew = new ArtiklNewWindow ();
+			ArtiklNewEditWindow frmArtiklNew = new ArtiklNewEditWindow ();
 			frmArtiklNew.Show ();
+			frmArtiklNew.Destroyed += new EventHandler (FrmArtiklNewEdit_onDestroyed);
 
+		}
 
-			//refresh
-			 /*store = null;
-			prepareNodeView (); */
-
+		private void FrmArtiklNewEdit_onDestroyed (object o, EventArgs e) {
+			refreshNodeView ();
 		}
 
 		protected void btnZatvori_onClick (object sender, EventArgs e)
 		{
 			this.Destroy ();
+		}
+
+		protected void btnUredi_onClick (object sender, EventArgs e)
+		{
+			
+			ArtiklTreeNode atn = (MyStockManager.ArtiklTreeNode)nodeview1.NodeSelection.SelectedNode;
+			ArtiklNewEditWindow frmUrediArtikl = new ArtiklNewEditWindow (1, atn);
+			frmUrediArtikl.Show ();
+			frmUrediArtikl.Destroyed += new EventHandler (FrmArtiklNewEdit_onDestroyed);
+
+		}
+
+
+		protected void btnDelete_onClick (object sender, EventArgs e)
+		{
+			if ((MyStockManager.ArtiklTreeNode)nodeview1.NodeSelection.SelectedNode != null) {
+				ArtiklTreeNode atn = (MyStockManager.ArtiklTreeNode)nodeview1.NodeSelection.SelectedNode;
+				MessageDialog md = new MessageDialog (this, DialogFlags.Modal, MessageType.Info, ButtonsType.YesNo, "Jeste li sigurni da želite obrisati artikl?");
+				ResponseType rt = (ResponseType) md.Run ();
+				if (rt == ResponseType.Yes) {
+					Artikl a = new Artikl ();
+					a.Id = atn.Id;
+					a.Obrisi ();
+					md.Destroy ();
+					refreshNodeView ();
+				}
+				if (rt == ResponseType.No) {
+					md.Destroy ();
+				}
+			} else {
+				MessageDialog md = new MessageDialog (this, DialogFlags.Modal, MessageType.Info, ButtonsType.Ok, "Potrebno je označiti artikl!");
+				ResponseType rt = (ResponseType) md.Run ();
+				if (rt == ResponseType.Ok) {
+					md.Destroy ();
+					refreshNodeView ();
+				}
+			}
+		}
+
+		private void refreshNodeView() {
+			this.store = null;
+			this.nodeview1.NodeStore = getStore ();
 		}
 	}
 
@@ -75,7 +119,6 @@ namespace MyStockManager
 			NazivKategorije = a.NazivKategorija;
 			Naziv = a.Naziv;
 			Opis = a.Opis;
-			Cijena = a.Cijena;
 			Stanje = a.Stanje;
 			ZalihaMin = a.ZalihaMin;
 			ZalihaMax = a.ZalihaMax;

@@ -160,10 +160,11 @@
               <widget class="Gtk.Button" id="btnNoviArtikl">
                 <property name="MemberName" />
                 <property name="CanFocus">True</property>
-                <property name="Type">TextOnly</property>
-                <property name="Label" translatable="yes">Novi artikl</property>
+                <property name="Type">TextAndIcon</property>
+                <property name="Icon">stock:gtk-add SmallToolbar</property>
+                <property name="Label" translatable="yes">  Novi artikl  </property>
                 <property name="UseUnderline">True</property>
-                <signal name="Clicked" handler="btnUredi_onClick" />
+                <signal name="Clicked" handler="btnNovi_onClick" />
               </widget>
               <packing>
                 <property name="Position">0</property>
@@ -177,9 +178,11 @@
               <widget class="Gtk.Button" id="btnUredi">
                 <property name="MemberName" />
                 <property name="CanFocus">True</property>
-                <property name="Type">TextOnly</property>
-                <property name="Label" translatable="yes">Uredi označenog</property>
+                <property name="Type">TextAndIcon</property>
+                <property name="Icon">stock:gtk-edit SmallToolbar</property>
+                <property name="Label" translatable="yes">  Uredi označenog  </property>
                 <property name="UseUnderline">True</property>
+                <signal name="Clicked" handler="btnUredi_onClick" />
               </widget>
               <packing>
                 <property name="Position">1</property>
@@ -193,9 +196,11 @@
               <widget class="Gtk.Button" id="btnObrisi">
                 <property name="MemberName" />
                 <property name="CanFocus">True</property>
-                <property name="Type">TextOnly</property>
-                <property name="Label" translatable="yes">Obriši označenog</property>
+                <property name="Type">TextAndIcon</property>
+                <property name="Icon">stock:gtk-delete SmallToolbar</property>
+                <property name="Label" translatable="yes">  Obriši označenog  </property>
                 <property name="UseUnderline">True</property>
+                <signal name="Clicked" handler="btnDelete_onClick" />
               </widget>
               <packing>
                 <property name="Position">2</property>
@@ -218,6 +223,7 @@
           <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
             <property name="MemberName" />
             <property name="ShadowType">In</property>
+            <property name="BorderWidth">15</property>
             <child>
               <widget class="Gtk.NodeView" id="nodeview1">
                 <property name="MemberName" />
@@ -268,7 +274,7 @@
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Window" id="MyStockManager.ArtiklNewWindow" design-size="644 511">
+  <widget class="Gtk.Window" id="MyStockManager.ArtiklNewEditWindow" design-size="644 511">
     <property name="MemberName" />
     <property name="Title" translatable="yes">Novi artikl</property>
     <property name="WindowPosition">CenterAlways</property>
