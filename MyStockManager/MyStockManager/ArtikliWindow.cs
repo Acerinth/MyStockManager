@@ -1,7 +1,6 @@
 ﻿using System;
-using Gtk;
-using System.Collections.Generic;
-using static System.Math;
+using Gtk; //Message Dialog
+using System.Collections.Generic; // List
 
 namespace MyStockManager
 {
@@ -46,6 +45,21 @@ namespace MyStockManager
 			this.nodeview1.ShowAll ();
 		}
 
+		private void refreshNodeView() {
+			this.store = null;
+			this.nodeview1.NodeStore = getStore ();
+		}
+
+		private bool isRowSelected() {
+			if ((MyStockManager.ArtiklTreeNode)nodeview1.NodeSelection.SelectedNode != null) {
+				return true;
+			}
+			else {
+				General.GenerateMessageDialog (this, null, "Upozorenje", "Potrebno je označiti artikl.", MessageType.Warning);
+				return false;
+			}
+		}
+
 
 		protected void btnNovi_onClick (object sender, EventArgs e)
 		{
@@ -66,20 +80,21 @@ namespace MyStockManager
 
 		protected void btnUredi_onClick (object sender, EventArgs e)
 		{
-			
-			ArtiklTreeNode atn = (MyStockManager.ArtiklTreeNode)nodeview1.NodeSelection.SelectedNode;
-			ArtiklNewEditWindow frmUrediArtikl = new ArtiklNewEditWindow (1, atn);
-			frmUrediArtikl.Show ();
-			frmUrediArtikl.Destroyed += new EventHandler (FrmArtiklNewEdit_onDestroyed);
-
+			if (isRowSelected ()) {
+				ArtiklTreeNode atn = (MyStockManager.ArtiklTreeNode)nodeview1.NodeSelection.SelectedNode;
+				ArtiklNewEditWindow frmUrediArtikl = new ArtiklNewEditWindow (1, atn);
+				frmUrediArtikl.Show ();
+				frmUrediArtikl.Destroyed += new EventHandler (FrmArtiklNewEdit_onDestroyed);
+			}
 		}
 
 
 		protected void btnDelete_onClick (object sender, EventArgs e)
 		{
-			if ((MyStockManager.ArtiklTreeNode)nodeview1.NodeSelection.SelectedNode != null) {
+			if (isRowSelected()) {
 				ArtiklTreeNode atn = (MyStockManager.ArtiklTreeNode)nodeview1.NodeSelection.SelectedNode;
-				MessageDialog md = new MessageDialog (this, DialogFlags.Modal, MessageType.Info, ButtonsType.YesNo, "Jeste li sigurni da želite obrisati artikl?");
+				MessageDialog md = new MessageDialog (this, DialogFlags.Modal, MessageType.Question, ButtonsType.YesNo, "Jeste li sigurni da želite obrisati artikl?");
+				md.Title = "Brisanje artikla";
 				ResponseType rt = (ResponseType) md.Run ();
 				if (rt == ResponseType.Yes) {
 					Artikl a = new Artikl ();
@@ -91,20 +106,10 @@ namespace MyStockManager
 				if (rt == ResponseType.No) {
 					md.Destroy ();
 				}
-			} else {
-				MessageDialog md = new MessageDialog (this, DialogFlags.Modal, MessageType.Info, ButtonsType.Ok, "Potrebno je označiti artikl!");
-				ResponseType rt = (ResponseType) md.Run ();
-				if (rt == ResponseType.Ok) {
-					md.Destroy ();
-					refreshNodeView ();
-				}
-			}
+			} 
 		}
 
-		private void refreshNodeView() {
-			this.store = null;
-			this.nodeview1.NodeStore = getStore ();
-		}
+
 	}
 
 

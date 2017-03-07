@@ -43,7 +43,7 @@ namespace MyStockManager
 			this.btnNoviArtikl.CanFocus = true;
 			this.btnNoviArtikl.Name = "btnNoviArtikl";
 			this.btnNoviArtikl.UseUnderline = true;
-			this.btnNoviArtikl.Label = global::Mono.Unix.Catalog.GetString ("  Novi artikl  ");
+			this.btnNoviArtikl.Label = global::Mono.Unix.Catalog.GetString ("  Novo  ");
 			global::Gtk.Image w1 = new global::Gtk.Image ();
 			w1.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-add", global::Gtk.IconSize.SmallToolbar);
 			this.btnNoviArtikl.Image = w1;
@@ -58,7 +58,7 @@ namespace MyStockManager
 			this.btnUredi.CanFocus = true;
 			this.btnUredi.Name = "btnUredi";
 			this.btnUredi.UseUnderline = true;
-			this.btnUredi.Label = global::Mono.Unix.Catalog.GetString ("  Uredi označenog  ");
+			this.btnUredi.Label = global::Mono.Unix.Catalog.GetString ("  Uredi  ");
 			global::Gtk.Image w3 = new global::Gtk.Image ();
 			w3.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-edit", global::Gtk.IconSize.SmallToolbar);
 			this.btnUredi.Image = w3;
@@ -73,7 +73,7 @@ namespace MyStockManager
 			this.btnObrisi.CanFocus = true;
 			this.btnObrisi.Name = "btnObrisi";
 			this.btnObrisi.UseUnderline = true;
-			this.btnObrisi.Label = global::Mono.Unix.Catalog.GetString ("  Obriši označenog  ");
+			this.btnObrisi.Label = global::Mono.Unix.Catalog.GetString ("  Obriši  ");
 			global::Gtk.Image w5 = new global::Gtk.Image ();
 			w5.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-delete", global::Gtk.IconSize.SmallToolbar);
 			this.btnObrisi.Image = w5;

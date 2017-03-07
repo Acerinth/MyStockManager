@@ -81,6 +81,11 @@
     <Compile Include="JedinicaMjere.cs" />
     <Compile Include="ArtiklNewEditWindow.cs" />
     <Compile Include="gtk-gui\MyStockManager.ArtiklNewEditWindow.cs" />
+    <Compile Include="KategorijaWindow.cs" />
+    <Compile Include="gtk-gui\MyStockManager.KategorijaWindow.cs" />
+    <Compile Include="KategorijaNewEditWindow.cs" />
+    <Compile Include="gtk-gui\MyStockManager.KategorijaNewEditWindow.cs" />
+    <Compile Include="General.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

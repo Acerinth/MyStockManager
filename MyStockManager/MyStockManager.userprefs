@@ -2,8 +2,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.Workbench ActiveDocument="MyStockManager/ArtikliWindow.cs">
     <Files>
-      <File FileName="MyStockManager/ArtikliWindow.cs" Line="69" Column="75" />
-      <File FileName="MyStockManager/ArtiklNewEditWindow.cs" Line="55" Column="38" />
+      <File FileName="MyStockManager/ArtikliWindow.cs" Line="27" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

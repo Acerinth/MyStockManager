@@ -122,6 +122,7 @@ public partial class MainWindow
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
 		this.PregledAction.Activated += new global::System.EventHandler (this.onClick_Pregled);
+		this.KategorijeAction.Activated += new global::System.EventHandler (this.btnKategorije_onClick);
 		this.IzlazAction.Activated += new global::System.EventHandler (this.onClick_Izlaz);
 	}
 }
