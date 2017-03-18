@@ -22,6 +22,7 @@ namespace MyStockManager
 
 		protected void btnNovi_onClick (object sender, EventArgs e)
 		{
+			//samo neka nova linija koda
 			throw new NotImplementedException ();
 		}
 
