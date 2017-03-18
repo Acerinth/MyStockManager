@@ -86,6 +86,8 @@
     <Compile Include="KategorijaNewEditWindow.cs" />
     <Compile Include="gtk-gui\MyStockManager.KategorijaNewEditWindow.cs" />
     <Compile Include="General.cs" />
+    <Compile Include="DobavljacWindow.cs" />
+    <Compile Include="gtk-gui\MyStockManager.DobavljacWindow.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

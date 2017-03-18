@@ -47,13 +47,13 @@ namespace MyStockManager
 		}
 
 		public int Obrisi() {
-			String sqlQuery = "DELETE FROM dobavljac WHERE id_artikl = " + Id + ";";
+			String sqlQuery = "DELETE FROM dobavljac WHERE id_dobavljac = " + Id + ";";
 			return DatabaseConnection.Instance.executeQuery (sqlQuery);
 		}
 
 		public static List<Dobavljac> DohvatiDobavljace() {
 			List<Dobavljac> listaDobavljaci = new List<Dobavljac> ();
-			String sqlQuery = "SELECT dobavljac.*, mjesto.naziv AS naziv_mjesta FROM dobavljac, mjesto WHERE dobavljac.id_mjesto=mjesto.id_mjesto;";
+			String sqlQuery = "SELECT dobavljac.*, mjesto.naziv AS naziv_mjesta FROM dobavljac, mjesto WHERE dobavljac.id_mjesto=mjesto.id_mjesto ORDER BY id_dobavljac;";
 			NpgsqlDataReader dr = DatabaseConnection.Instance.getDataReader (sqlQuery);
 			while (dr.Read ()) {
 				Dobavljac d = new Dobavljac (dr);

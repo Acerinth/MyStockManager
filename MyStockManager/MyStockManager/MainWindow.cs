@@ -37,4 +37,13 @@ public partial class MainWindow: Gtk.Window
 		winKategorija.WindowPosition = WindowPosition.CenterAlways;
 		winKategorija.Show ();
 	}
+
+	protected void dobavljaci_onClick (object sender, EventArgs e)
+	{
+		MyStockManager.DobavljacWindow winDobavljac = new MyStockManager.DobavljacWindow ();
+		winDobavljac.WindowPosition = WindowPosition.CenterAlways;
+		winDobavljac.Show ();
+	}
+
+
 }
