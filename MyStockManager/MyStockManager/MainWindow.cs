@@ -67,4 +67,11 @@ public partial class MainWindow: Gtk.Window
 		winPrijevoznik.Show ();
 	}
 
+	protected void primke_onClick (object sender, EventArgs e)
+	{
+		MyStockManager.PrimkaWindow winPrimka = new MyStockManager.PrimkaWindow ();
+		winPrimka.WindowPosition = WindowPosition.CenterAlways;
+		winPrimka.Show ();
+	}
+
 }

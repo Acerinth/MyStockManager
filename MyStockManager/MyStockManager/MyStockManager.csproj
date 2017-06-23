@@ -97,6 +97,9 @@
     <Compile Include="Prijevoznik.cs" />
     <Compile Include="PrijevoznikWindow.cs" />
     <Compile Include="gtk-gui\MyStockManager.PrijevoznikWindow.cs" />
+    <Compile Include="Primka.cs" />
+    <Compile Include="PrimkaWindow.cs" />
+    <Compile Include="gtk-gui\MyStockManager.PrimkaWindow.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

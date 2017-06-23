@@ -30,6 +30,17 @@ namespace MyStockManager
 			}
 		}
 
+		public static Prijevoznik DohvatiPrijevoznika(int idPrijevoznik) {
+			String sqlUpit = "SELECT prijevoznik.*, mjesto.naziv AS naziv_mjesta FROM prijevoznik, mjesto WHERE prijevoznik.id_mjesto=mjesto.id_mjesto AND id_prijevoznik = " + idPrijevoznik;
+			NpgsqlDataReader dr = DatabaseConnection.Instance.getDataReader (sqlUpit);
+			Prijevoznik p = null;
+			if (dr.Read ()) {
+				p = new Prijevoznik (dr);
+			}
+			dr.Close ();
+			return p;
+		}
+
 		public static List<Prijevoznik> DohvatiPrijevoznike() {
 			List<Prijevoznik> listaPrijevoznici = new List<Prijevoznik> ();
 			String sqlQuery = "SELECT prijevoznik.*, mjesto.naziv AS naziv_mjesta FROM prijevoznik, mjesto WHERE prijevoznik.id_mjesto=mjesto.id_mjesto ORDER BY id_prijevoznik;";

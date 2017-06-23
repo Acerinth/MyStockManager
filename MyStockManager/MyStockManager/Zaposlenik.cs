@@ -24,6 +24,17 @@ namespace MyStockManager
 			}
 		}
 
+		public static Zaposlenik DohvatiZaposlenika(int idZaposlenik) {
+			String sqlUpit = "SELECT * FROM zaposlenik WHERE id_zaposlenik = " + idZaposlenik;
+			Zaposlenik z = null;
+			NpgsqlDataReader dr = DatabaseConnection.Instance.getDataReader (sqlUpit);
+			if (dr.Read ()) {
+				z = new Zaposlenik (dr);
+			}
+			dr.Close ();
+			return z;
+		}
+
 		public static List<Zaposlenik> DohvatiZaposlenike() {
 			List<Zaposlenik> listaZaposlenici = new List<Zaposlenik> ();
 			String sqlUpit = "SELECT * FROM zaposlenik";
@@ -34,6 +45,11 @@ namespace MyStockManager
 			}
 			dr.Close ();
 			return listaZaposlenici;
+		}
+
+		public override string ToString ()
+		{
+			return Ime + " " + Prezime;
 		}
 	}
 }
