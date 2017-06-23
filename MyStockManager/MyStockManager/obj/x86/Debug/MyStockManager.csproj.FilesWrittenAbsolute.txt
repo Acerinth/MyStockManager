@@ -5,3 +5,10 @@
 /home/paula/MyStockManager/MyStockManager/bin/Debug/MyStockManager.exe
 /home/paula/MyStockManager/MyStockManager/obj/x86/Debug/MyStockManager.exe
 /home/paula/MyStockManager/MyStockManager/obj/x86/Debug/MyStockManager.exe.mdb
+/home/paula/TBP_Project/MyStockManager/MyStockManager/MyStockManager/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/paula/TBP_Project/MyStockManager/MyStockManager/MyStockManager/obj/x86/Debug/MyStockManager.gtk-gui.gui.stetic
+/home/paula/TBP_Project/MyStockManager/MyStockManager/MyStockManager/bin/Debug/MyStockManager.exe.mdb
+/home/paula/TBP_Project/MyStockManager/MyStockManager/MyStockManager/bin/Debug/MyStockManager.exe
+/home/paula/TBP_Project/MyStockManager/MyStockManager/MyStockManager/obj/x86/Debug/MyStockManager.exe
+/home/paula/TBP_Project/MyStockManager/MyStockManager/MyStockManager/obj/x86/Debug/MyStockManager.exe.mdb
+/home/paula/TBP_Project/MyStockManager/MyStockManager/MyStockManager/bin/Debug/Npgsql.dll

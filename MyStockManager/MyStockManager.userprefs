@@ -1,9 +1,11 @@
 ﻿<Properties StartupItem="MyStockManager/MyStockManager.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MyStockManager/ArtikliWindow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MyStockManager/DobavljacWindow.cs">
     <Files>
-      <File FileName="MyStockManager/ArtikliWindow.cs" Line="16" Column="4" />
-      <File FileName="MyStockManager/Dobavljac.cs" Line="1" Column="1" />
+      <File FileName="MyStockManager/ArtikliWindow.cs" Line="124" Column="32" />
+      <File FileName="MyStockManager/Dobavljac.cs" Line="28" Column="5" />
+      <File FileName="MyStockManager/DobavljacWindow.cs" Line="19" Column="56" />
+      <File FileName="MyStockManager/MainWindow.cs" Line="46" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -124,6 +124,7 @@ namespace MyStockManager
 			NazivKategorije = a.NazivKategorija;
 			Naziv = a.Naziv;
 			Opis = a.Opis;
+			Cijena = a.Cijena;
 			Stanje = a.Stanje;
 			ZalihaMin = a.ZalihaMin;
 			ZalihaMax = a.ZalihaMax;
