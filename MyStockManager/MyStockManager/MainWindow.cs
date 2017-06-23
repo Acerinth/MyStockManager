@@ -53,4 +53,11 @@ public partial class MainWindow: Gtk.Window
 		winMjesto.Show ();
 	}
 
+	protected void zaposlenici_onClick (object sender, EventArgs e)
+	{
+		MyStockManager.ZaposlenikWindow winZaposlenik = new MyStockManager.ZaposlenikWindow ();
+		winZaposlenik.WindowPosition = WindowPosition.CenterAlways;
+		winZaposlenik.Show ();
+	}
+
 }
