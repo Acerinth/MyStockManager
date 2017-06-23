@@ -46,4 +46,11 @@ public partial class MainWindow: Gtk.Window
 	}
 
 
+	protected void mjesta_onClick (object sender, EventArgs e)
+	{
+		MyStockManager.MjestoWindow winMjesto = new MyStockManager.MjestoWindow ();
+		winMjesto.WindowPosition = WindowPosition.CenterAlways;
+		winMjesto.Show ();
+	}
+
 }
