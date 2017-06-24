@@ -15,7 +15,7 @@ namespace MyStockManager
 		public Dobavljac Dobavljac {set;get; }
 		public int IdZaposlenik { set; get; }
 		public Zaposlenik Zaposlenik { set; get; }
-
+		public List<Stavka> ListaStavki { set; get; }
 
 		public Primka ()
 		{
@@ -24,7 +24,7 @@ namespace MyStockManager
 		public Primka (NpgsqlDataReader dr) {
 			if (dr != null) {
 				IdPrimka = dr ["id_primka"].ToString ();
-				Datum = DateTime.Parse(dr ["datum"].ToString ());
+				Datum = DateTime.Parse(dr ["datum"].ToString ()); //TO DO: RIJEŠITI PRIKAZ DATUMA
 				BrojDostavnice = dr ["broj_dostavnice"].ToString ();
 				IdPrijevoznik = int.Parse (dr ["id_prijevoznik"].ToString ());
 				IdDobavljac = int.Parse (dr ["id_dobavljac"].ToString ());
@@ -36,6 +36,23 @@ namespace MyStockManager
 			Dobavljac = Dobavljac.DohvatiDobavljaca (IdDobavljac);
 			Zaposlenik = Zaposlenik.DohvatiZaposlenika (IdZaposlenik);
 			Prijevoznik = Prijevoznik.DohvatiPrijevoznika (IdPrijevoznik);
+		}
+
+		private void dohvatiStavke() {
+			ListaStavki = Stavka.DohvatiStavke (IdPrimka, 0);
+		}
+
+		public static Primka DohvatiPrimku(String idPrimka) {
+			String sqlUpit = "SELECT * FROM primka WHERE id_primka = '" + idPrimka + "'";
+			NpgsqlDataReader dr = DatabaseConnection.Instance.getDataReader (sqlUpit);
+			Primka p = null;
+			if (dr.Read ()) {
+				p = new Primka (dr);
+			}
+			dr.Close ();
+			p.dohvatiPodatke ();
+			p.dohvatiStavke ();
+			return p;
 		}
 
 		public static List<Primka> DohvatiPrimke() {

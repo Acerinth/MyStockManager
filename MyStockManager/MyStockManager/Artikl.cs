@@ -60,6 +60,17 @@ namespace MyStockManager
 			return DatabaseConnection.Instance.executeQuery (sqlQuery);
 		}
 
+		public static Artikl DohvatiArtikl(int idArtikl) {
+			String sqlUpit = "SELECT artikl.*, kategorija.naziv AS naziv_kategorija  FROM artikl, kategorija WHERE artikl.id_kategorija = kategorija.id_kategorija AND artikl.id_artikl = " + idArtikl;
+			NpgsqlDataReader dr = DatabaseConnection.Instance.getDataReader (sqlUpit);
+			Artikl a = null;
+			if (dr.Read ()) {
+				a = new Artikl (dr);
+			}
+			dr.Close ();
+			return a;
+		}
+
 		public static List<Artikl> DohvatiArtikle() {
 			List<Artikl> listaArtikli = new List<Artikl> ();
 			String sqlQuery = "SELECT artikl.*, kategorija.naziv AS naziv_kategorija  FROM artikl, kategorija WHERE artikl.id_kategorija = kategorija.id_kategorija ORDER BY id_artikl;";

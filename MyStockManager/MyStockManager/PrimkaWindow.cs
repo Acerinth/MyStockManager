@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Gtk;
 
 namespace MyStockManager
 {
@@ -39,41 +40,71 @@ namespace MyStockManager
 			this.nodeview1.ShowAll ();
 		}
 
+		private bool isRowSelected() {
+			if ((MyStockManager.PrimkaTreeNode)nodeview1.NodeSelection.SelectedNode != null) {
+				return true;
+			}
+			else {
+				General.GenerateMessageDialog (this, null, "Upozorenje", "Potrebno je označiti dokument.", MessageType.Warning);
+				return false;
+			}
+		}
 
+		protected void btnZatvori_onClick (object sender, EventArgs e)
+		{
+			this.Destroy ();
+		}
 
-
-		[Gtk.TreeNode (ListOnly=true)]
-		public class PrimkaTreeNode : Gtk.TreeNode {
-
-			public PrimkaTreeNode (Primka p)
-			{
-				IdPrimka = p.IdPrimka;
-				Datum = p.Datum;
-				BrojDostavnice = p.BrojDostavnice;
-				NazivDobavljaca = p.Dobavljac.Naziv;
-				NazivPrijevoznika = p.Prijevoznik.Naziv;
-				Zaposlenik = p.Zaposlenik.ToString();
+		protected void btnDetalji_onClick (object sender, EventArgs e)
+		{
+			if (isRowSelected ()) {
+				PrimkaTreeNode odabranaPrimka = (MyStockManager.PrimkaTreeNode)nodeview1.NodeSelection.SelectedNode;
+				PrimkaNewDetailsWindow winDetalji = new PrimkaNewDetailsWindow (odabranaPrimka.IdPrimka, 1);
+				winDetalji.WindowPosition = Gtk.WindowPosition.CenterAlways;
+				winDetalji.Show ();
 			}
 
-			[Gtk.TreeNodeValue (Column=0)]
-			public String IdPrimka { set; get;}
-
-			[Gtk.TreeNodeValue (Column=1)]
-			public DateTime Datum { set; get;}
-
-			[Gtk.TreeNodeValue (Column=2)]
-			public String BrojDostavnice { set; get;}
-
-			[Gtk.TreeNodeValue (Column=3)]
-			public String NazivDobavljaca { set; get;}
-
-			[Gtk.TreeNodeValue (Column=4)]
-			public String NazivPrijevoznika { set; get;}
-
-			[Gtk.TreeNodeValue (Column=5)]
-			public String Zaposlenik { set; get;}
-
 		}
+
+
+
 	}
+
+
+
+	[Gtk.TreeNode (ListOnly=true)]
+	public class PrimkaTreeNode : Gtk.TreeNode {
+
+		public PrimkaTreeNode (Primka p)
+		{
+			IdPrimka = p.IdPrimka;
+			Datum = p.Datum.ToLongDateString();
+			BrojDostavnice = p.BrojDostavnice;
+			NazivDobavljaca = p.Dobavljac.Naziv;
+			NazivPrijevoznika = p.Prijevoznik.Naziv;
+			Zaposlenik = p.Zaposlenik.ToString();
+		}
+
+		[Gtk.TreeNodeValue (Column=0)]
+		public String IdPrimka { set; get;}
+
+		[Gtk.TreeNodeValue (Column=1)]
+		public String Datum { set; get;}
+
+		[Gtk.TreeNodeValue (Column=2)]
+		public String BrojDostavnice { set; get;}
+
+		[Gtk.TreeNodeValue (Column=3)]
+		public String NazivDobavljaca { set; get;}
+
+		[Gtk.TreeNodeValue (Column=4)]
+		public String NazivPrijevoznika { set; get;}
+
+		[Gtk.TreeNodeValue (Column=5)]
+		public String Zaposlenik { set; get;}
+
+
+	}
+
 }
 

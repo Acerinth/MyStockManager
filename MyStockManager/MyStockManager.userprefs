@@ -1,12 +1,12 @@
 ﻿<Properties StartupItem="MyStockManager/MyStockManager.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MyStockManager/Zaposlenik.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MyStockManager/Primka.cs">
     <Files>
-      <File FileName="MyStockManager/Artikl.cs" Line="41" Column="18" />
-      <File FileName="MyStockManager/ArtikliWindow.cs" Line="125" Column="20" />
-      <File FileName="MyStockManager/MainWindow.cs" Line="60" Column="25" />
-      <File FileName="MyStockManager/Zaposlenik.cs" Line="36" Column="28" />
-      <File FileName="MyStockManager/ZaposlenikWindow.cs" Line="31" Column="4" />
+      <File FileName="MyStockManager/MainWindow.cs" Line="1" Column="1" />
+      <File FileName="MyStockManager/Primka.cs" Line="27" Column="52" />
+      <File FileName="MyStockManager/PrimkaWindow.cs" Line="44" Column="20" />
+      <File FileName="MyStockManager/Artikl.cs" Line="1" Column="1" />
+      <File FileName="MyStockManager/ArtikliWindow.cs" Line="21" Column="24" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
