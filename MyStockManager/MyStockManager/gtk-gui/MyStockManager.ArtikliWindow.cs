@@ -20,6 +20,8 @@ namespace MyStockManager
 		
 		private global::Gtk.HBox hbox1;
 		
+		private global::Gtk.Button btnOK;
+		
 		private global::Gtk.Button btnZatvori;
 
 		protected virtual void Build ()
@@ -107,35 +109,50 @@ namespace MyStockManager
 			this.hbox1.Name = "hbox1";
 			this.hbox1.Spacing = 6;
 			// Container child hbox1.Gtk.Box+BoxChild
+			this.btnOK = new global::Gtk.Button ();
+			this.btnOK.CanFocus = true;
+			this.btnOK.Name = "btnOK";
+			this.btnOK.UseUnderline = true;
+			this.btnOK.Label = global::Mono.Unix.Catalog.GetString (" U redu ");
+			this.hbox1.Add (this.btnOK);
+			global::Gtk.Box.BoxChild w10 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.btnOK]));
+			w10.PackType = ((global::Gtk.PackType)(1));
+			w10.Position = 1;
+			w10.Expand = false;
+			w10.Fill = false;
+			w10.Padding = ((uint)(15));
+			// Container child hbox1.Gtk.Box+BoxChild
 			this.btnZatvori = new global::Gtk.Button ();
 			this.btnZatvori.CanFocus = true;
 			this.btnZatvori.Name = "btnZatvori";
 			this.btnZatvori.UseUnderline = true;
 			this.btnZatvori.Label = global::Mono.Unix.Catalog.GetString ("Zatvori");
 			this.hbox1.Add (this.btnZatvori);
-			global::Gtk.Box.BoxChild w10 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.btnZatvori]));
-			w10.PackType = ((global::Gtk.PackType)(1));
-			w10.Position = 1;
-			w10.Expand = false;
-			w10.Fill = false;
-			w10.Padding = ((uint)(15));
-			this.vbox3.Add (this.hbox1);
-			global::Gtk.Box.BoxChild w11 = ((global::Gtk.Box.BoxChild)(this.vbox3 [this.hbox1]));
+			global::Gtk.Box.BoxChild w11 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.btnZatvori]));
+			w11.PackType = ((global::Gtk.PackType)(1));
 			w11.Position = 2;
 			w11.Expand = false;
 			w11.Fill = false;
 			w11.Padding = ((uint)(15));
+			this.vbox3.Add (this.hbox1);
+			global::Gtk.Box.BoxChild w12 = ((global::Gtk.Box.BoxChild)(this.vbox3 [this.hbox1]));
+			w12.Position = 2;
+			w12.Expand = false;
+			w12.Fill = false;
+			w12.Padding = ((uint)(15));
 			this.Add (this.vbox3);
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
 			}
 			this.DefaultWidth = 994;
 			this.DefaultHeight = 575;
+			this.btnOK.Hide ();
 			this.Show ();
 			this.btnNoviArtikl.Clicked += new global::System.EventHandler (this.btnNovi_onClick);
 			this.btnUredi.Clicked += new global::System.EventHandler (this.btnUredi_onClick);
 			this.btnObrisi.Clicked += new global::System.EventHandler (this.btnDelete_onClick);
 			this.btnZatvori.Clicked += new global::System.EventHandler (this.btnZatvori_onClick);
+			this.btnOK.Clicked += new global::System.EventHandler (this.btnOK_onClick);
 		}
 	}
 }

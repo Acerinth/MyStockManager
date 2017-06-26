@@ -7,14 +7,30 @@ namespace MyStockManager
 	public partial class ArtikliWindow : Gtk.Window
 	{
 		Gtk.NodeStore store = null;
+		private int Opcija;
 
-		public ArtikliWindow () : base (Gtk.WindowType.Toplevel)
+		public int IdOdabraniArtikl = 0;
+
+		public ArtikliWindow (int o=0) : base (Gtk.WindowType.Toplevel)
 		{
 			this.Build ();
 
 			prepareNodeView ();
 
+			Opcija = o;
 
+			if (Opcija == 1) {
+				onemoguciGumbe ();
+			}
+
+
+		}
+
+		private void onemoguciGumbe() {
+			btnNoviArtikl.Visible = false;
+			btnUredi.Visible = false;
+			btnObrisi.Visible = false;
+			btnOK.Visible = true;
 		}
 
 		private Gtk.NodeStore getStore() {
@@ -110,6 +126,17 @@ namespace MyStockManager
 		}
 
 
+		protected void btnOK_onClick (object sender, EventArgs e)
+		{
+			if (isRowSelected ()) {
+				ArtiklTreeNode atn = (MyStockManager.ArtiklTreeNode)nodeview1.NodeSelection.SelectedNode;
+				IdOdabraniArtikl = atn.Id;
+				this.Destroy ();
+			} else {
+				General.GenerateMessageDialog (this, null, "Upozorenje", "Potrebno je označiti artikl.", MessageType.Warning);
+			}
+
+		}
 	}
 
 

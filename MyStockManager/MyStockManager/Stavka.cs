@@ -11,8 +11,12 @@ namespace MyStockManager
 		public Artikl Artikl { set; get; }
 		public int Kolicina { set; get; }
 
-		public Stavka ()
+		public Stavka (string idDok, int idArt, Artikl a, int kol)
 		{
+			IdDokument = idDok;
+			IdArtikl = idArt;
+			Artikl = a;
+			Kolicina = kol;
 		}
 
 		public Stavka(NpgsqlDataReader dr) {

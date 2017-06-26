@@ -114,6 +114,7 @@ namespace MyStockManager
 			this.DefaultWidth = 835;
 			this.DefaultHeight = 523;
 			this.Show ();
+			this.btnNovaPrimka.Clicked += new global::System.EventHandler (this.btnNova_onClick);
 			this.btnDetalji.Clicked += new global::System.EventHandler (this.btnDetalji_onClick);
 			this.btnZatvori.Clicked += new global::System.EventHandler (this.btnZatvori_onClick);
 		}

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Gtk;
 
 namespace MyStockManager
 {
@@ -7,12 +8,33 @@ namespace MyStockManager
 	{
 		Gtk.NodeStore store = null;
 
-		public PrijevoznikWindow () :
+		public PrijevoznikTreeNode odabraniPrijevoznik = null;
+
+		public PrijevoznikWindow (int opcija=0) :
 			base (Gtk.WindowType.Toplevel)
 		{
 			this.Build ();
 
 			prepareNodeView ();
+
+			if (opcija == 1) {
+				onemoguciGumbe ();
+			}
+		}
+
+		private void onemoguciGumbe() {
+			hbox1.Visible = false;
+			btnOK.Visible = true;
+		}
+
+		private bool isRowSelected() {
+			if ((MyStockManager.PrijevoznikTreeNode)nodeview1.NodeSelection.SelectedNode != null) {
+				return true;
+			}
+			else {
+				General.GenerateMessageDialog (this, null, "Upozorenje", "Potrebno je označiti prijevoznika.", MessageType.Warning);
+				return false;
+			}
 		}
 
 		private Gtk.NodeStore getStore() {
@@ -45,42 +67,52 @@ namespace MyStockManager
 			this.Destroy ();
 		}
 
-		[Gtk.TreeNode (ListOnly=true)]
-		public class PrijevoznikTreeNode : Gtk.TreeNode {
-
-			public PrijevoznikTreeNode (Prijevoznik p)
-			{
-				Id = p.Id;
-				Naziv = p.Naziv;
-				Kontakt = p.Kontakt;
-				Telefon = p.Telefon;
-				Email = p.Email;
-				IdMjesto = p.IdMjesto;
-				NazivMjesta = p.NazivMjesta;
+		protected void btnOK_onClick (object sender, EventArgs e)
+		{
+			if (isRowSelected ()) {
+				odabraniPrijevoznik = (MyStockManager.PrijevoznikTreeNode)nodeview1.NodeSelection.SelectedNode;
+				this.Destroy ();
 			}
-
-			[Gtk.TreeNodeValue (Column=0)]
-			public int Id { set; get;}
-
-			[Gtk.TreeNodeValue (Column=1)]
-			public String Naziv { set; get;}
-
-			[Gtk.TreeNodeValue (Column=2)]
-			public String Kontakt { set; get;}
-
-			[Gtk.TreeNodeValue (Column=3)]
-			public String Telefon { set; get;}
-
-			[Gtk.TreeNodeValue (Column=4)]
-			public String Email { set; get;}
-
-			[Gtk.TreeNodeValue (Column=5)]
-			public int IdMjesto { set; get;}
-
-			[Gtk.TreeNodeValue (Column=6)]
-			public String NazivMjesta { set; get;}
-
 		}
+
+
+	}
+
+	[Gtk.TreeNode (ListOnly=true)]
+	public class PrijevoznikTreeNode : Gtk.TreeNode {
+
+		public PrijevoznikTreeNode (Prijevoznik p)
+		{
+			Id = p.Id;
+			Naziv = p.Naziv;
+			Kontakt = p.Kontakt;
+			Telefon = p.Telefon;
+			Email = p.Email;
+			IdMjesto = p.IdMjesto;
+			NazivMjesta = p.NazivMjesta;
+		}
+
+		[Gtk.TreeNodeValue (Column=0)]
+		public int Id { set; get;}
+
+		[Gtk.TreeNodeValue (Column=1)]
+		public String Naziv { set; get;}
+
+		[Gtk.TreeNodeValue (Column=2)]
+		public String Kontakt { set; get;}
+
+		[Gtk.TreeNodeValue (Column=3)]
+		public String Telefon { set; get;}
+
+		[Gtk.TreeNodeValue (Column=4)]
+		public String Email { set; get;}
+
+		[Gtk.TreeNodeValue (Column=5)]
+		public int IdMjesto { set; get;}
+
+		[Gtk.TreeNodeValue (Column=6)]
+		public String NazivMjesta { set; get;}
+
 	}
 }
 

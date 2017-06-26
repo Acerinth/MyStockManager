@@ -40,6 +40,11 @@ namespace MyStockManager
 			this.nodeview1.ShowAll ();
 		}
 
+		private void refreshNodeView() {
+			this.store = null;
+			this.nodeview1.NodeStore = getStore ();
+		}
+
 		private bool isRowSelected() {
 			if ((MyStockManager.PrimkaTreeNode)nodeview1.NodeSelection.SelectedNode != null) {
 				return true;
@@ -68,6 +73,18 @@ namespace MyStockManager
 
 
 
+		protected void btnNova_onClick (object sender, EventArgs e)
+		{
+			PrimkaNewDetailsWindow novaPrimka = new PrimkaNewDetailsWindow ();
+			novaPrimka.WindowPosition = WindowPosition.CenterAlways;
+			novaPrimka.Show ();
+
+			novaPrimka.Destroyed += new EventHandler (novaPrimka_onDestroy);
+		}
+
+		protected void novaPrimka_onDestroy(object sender, EventArgs e) {
+			refreshNodeView ();
+		}
 	}
 
 

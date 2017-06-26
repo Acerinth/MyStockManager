@@ -1,18 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
+using Gtk;
 
 namespace MyStockManager
 {
 	public partial class ZaposlenikWindow : Gtk.Window
 	{
 		Gtk.NodeStore store = null;
+		public ZaposlenikTreeNode odabraniZaposlenik = null;
 
-		public ZaposlenikWindow () :
+		public ZaposlenikWindow (int opcija=0) :
 			base (Gtk.WindowType.Toplevel)
 		{
 			this.Build ();
 
 			prepareNodeView ();
+
+			if (opcija == 1) {
+				onemoguciGumbe ();
+			}
+		}
+
+		private void onemoguciGumbe() {
+			hbox3.Visible = false;
+			btnOK.Visible = true;
+		}
+
+		private bool isRowSelected() {
+			if ((MyStockManager.ZaposlenikTreeNode)nodeview1.NodeSelection.SelectedNode != null) {
+				return true;
+			}
+			else {
+				General.GenerateMessageDialog (this, null, "Upozorenje", "Potrebno je označiti zaposlenika.", MessageType.Warning);
+				return false;
+			}
 		}
 
 		private Gtk.NodeStore getStore() {
@@ -42,29 +63,39 @@ namespace MyStockManager
 			this.Destroy ();
 		}
 
-		[Gtk.TreeNode (ListOnly=true)]
-		public class ZaposlenikTreeNode : Gtk.TreeNode {
-
-			public ZaposlenikTreeNode (Zaposlenik z)
-			{
-				Id = z.IdZaposlenik;
-				Ime = z.Ime;
-				Prezime = z.Prezime;
-				Telefon = z.Telefon;
+		protected void btnOK_onClick (object sender, EventArgs e)
+		{
+			if (isRowSelected ()) {
+				odabraniZaposlenik = (MyStockManager.ZaposlenikTreeNode)nodeview1.NodeSelection.SelectedNode;
+				this.Destroy ();
 			}
+		}	
 
-			[Gtk.TreeNodeValue (Column=0)]
-			public int Id { set; get;}
 
-			[Gtk.TreeNodeValue (Column=1)]
-			public String Ime { set; get;}
+	}
 
-			[Gtk.TreeNodeValue (Column=2)]
-			public String Prezime { set; get;}
+	[Gtk.TreeNode (ListOnly=true)]
+	public class ZaposlenikTreeNode : Gtk.TreeNode {
 
-			[Gtk.TreeNodeValue (Column=3)]
-			public String Telefon { set; get;}
+		public ZaposlenikTreeNode (Zaposlenik z)
+		{
+			Id = z.IdZaposlenik;
+			Ime = z.Ime;
+			Prezime = z.Prezime;
+			Telefon = z.Telefon;
 		}
+
+		[Gtk.TreeNodeValue (Column=0)]
+		public int Id { set; get;}
+
+		[Gtk.TreeNodeValue (Column=1)]
+		public String Ime { set; get;}
+
+		[Gtk.TreeNodeValue (Column=2)]
+		public String Prezime { set; get;}
+
+		[Gtk.TreeNodeValue (Column=3)]
+		public String Telefon { set; get;}
 	}
 }
 

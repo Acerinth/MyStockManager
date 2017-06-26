@@ -36,6 +36,8 @@ namespace MyStockManager
 		
 		private global::Gtk.Entry inPrijevoznikNaziv;
 		
+		private global::Gtk.Button btnPronadjiPrijevoznika;
+		
 		private global::Gtk.HBox hbox5;
 		
 		private global::Gtk.Label label5;
@@ -44,26 +46,56 @@ namespace MyStockManager
 		
 		private global::Gtk.Entry inDobavljacNaziv;
 		
+		private global::Gtk.Button btnPronadjiDobavljaca;
+		
 		private global::Gtk.HBox hbox6;
 		
 		private global::Gtk.Label label6;
 		
 		private global::Gtk.Entry inZaposlenik;
 		
+		private global::Gtk.Button btnPronadjiZaposlenika;
+		
+		private global::Gtk.HBox hbox8;
+		
+		private global::Gtk.Label label10;
+		
+		private global::Gtk.Button btnPronadjiStavku;
+		
+		private global::Gtk.HBox hbox10;
+		
 		private global::Gtk.Label label7;
+		
+		private global::Gtk.Label label11;
+		
+		private global::Gtk.Label label12;
+		
+		private global::Gtk.HBox hbox9;
+		
+		private global::Gtk.Entry outIdArtikla;
+		
+		private global::Gtk.Entry outNazivArtikla;
+		
+		private global::Gtk.Entry inKolicina;
+		
+		private global::Gtk.Button btnDodajStavku;
 		
 		private global::Gtk.ScrolledWindow GtkScrolledWindow;
 		
 		private global::Gtk.NodeView outStavke;
 		
 		private global::Gtk.HBox hbox7;
+		
+		private global::Gtk.Button btnSpremi;
+		
+		private global::Gtk.Button btnOdustani;
 
 		protected virtual void Build ()
 		{
 			global::Stetic.Gui.Initialize (this);
 			// Widget MyStockManager.PrimkaNewDetailsWindow
 			this.Name = "MyStockManager.PrimkaNewDetailsWindow";
-			this.Title = global::Mono.Unix.Catalog.GetString ("PrimkaNewDetailsWindow");
+			this.Title = global::Mono.Unix.Catalog.GetString ("Nova primka");
 			this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 			// Container child MyStockManager.PrimkaNewDetailsWindow.Gtk.Container+ContainerChild
 			this.vbox1 = new global::Gtk.VBox ();
@@ -136,7 +168,7 @@ namespace MyStockManager
 			this.inDatum.WidthRequest = 350;
 			this.inDatum.CanFocus = true;
 			this.inDatum.Name = "inDatum";
-			this.inDatum.IsEditable = true;
+			this.inDatum.IsEditable = false;
 			this.inDatum.InvisibleChar = '•';
 			this.hbox2.Add (this.inDatum);
 			global::Gtk.Box.BoxChild w7 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.inDatum]));
@@ -202,7 +234,7 @@ namespace MyStockManager
 			this.inPrijevoznikId.WidthRequest = 50;
 			this.inPrijevoznikId.CanFocus = true;
 			this.inPrijevoznikId.Name = "inPrijevoznikId";
-			this.inPrijevoznikId.IsEditable = true;
+			this.inPrijevoznikId.IsEditable = false;
 			this.inPrijevoznikId.InvisibleChar = '•';
 			this.hbox4.Add (this.inPrijevoznikId);
 			global::Gtk.Box.BoxChild w13 = ((global::Gtk.Box.BoxChild)(this.hbox4 [this.inPrijevoznikId]));
@@ -213,18 +245,30 @@ namespace MyStockManager
 			this.inPrijevoznikNaziv.WidthRequest = 200;
 			this.inPrijevoznikNaziv.CanFocus = true;
 			this.inPrijevoznikNaziv.Name = "inPrijevoznikNaziv";
-			this.inPrijevoznikNaziv.IsEditable = true;
+			this.inPrijevoznikNaziv.IsEditable = false;
 			this.inPrijevoznikNaziv.InvisibleChar = '•';
 			this.hbox4.Add (this.inPrijevoznikNaziv);
 			global::Gtk.Box.BoxChild w14 = ((global::Gtk.Box.BoxChild)(this.hbox4 [this.inPrijevoznikNaziv]));
 			w14.Position = 2;
 			w14.Expand = false;
-			this.vbox1.Add (this.hbox4);
-			global::Gtk.Box.BoxChild w15 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hbox4]));
+			// Container child hbox4.Gtk.Box+BoxChild
+			this.btnPronadjiPrijevoznika = new global::Gtk.Button ();
+			this.btnPronadjiPrijevoznika.CanFocus = true;
+			this.btnPronadjiPrijevoznika.Name = "btnPronadjiPrijevoznika";
+			this.btnPronadjiPrijevoznika.UseUnderline = true;
+			this.btnPronadjiPrijevoznika.Label = global::Mono.Unix.Catalog.GetString ("Pronađi...");
+			this.hbox4.Add (this.btnPronadjiPrijevoznika);
+			global::Gtk.Box.BoxChild w15 = ((global::Gtk.Box.BoxChild)(this.hbox4 [this.btnPronadjiPrijevoznika]));
 			w15.Position = 3;
 			w15.Expand = false;
 			w15.Fill = false;
-			w15.Padding = ((uint)(5));
+			w15.Padding = ((uint)(15));
+			this.vbox1.Add (this.hbox4);
+			global::Gtk.Box.BoxChild w16 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hbox4]));
+			w16.Position = 3;
+			w16.Expand = false;
+			w16.Fill = false;
+			w16.Padding = ((uint)(5));
 			// Container child vbox1.Gtk.Box+BoxChild
 			this.hbox5 = new global::Gtk.HBox ();
 			this.hbox5.Name = "hbox5";
@@ -236,39 +280,51 @@ namespace MyStockManager
 			this.label5.Xalign = 0F;
 			this.label5.LabelProp = global::Mono.Unix.Catalog.GetString ("Dobavljač:");
 			this.hbox5.Add (this.label5);
-			global::Gtk.Box.BoxChild w16 = ((global::Gtk.Box.BoxChild)(this.hbox5 [this.label5]));
-			w16.Position = 0;
-			w16.Expand = false;
-			w16.Fill = false;
-			w16.Padding = ((uint)(15));
+			global::Gtk.Box.BoxChild w17 = ((global::Gtk.Box.BoxChild)(this.hbox5 [this.label5]));
+			w17.Position = 0;
+			w17.Expand = false;
+			w17.Fill = false;
+			w17.Padding = ((uint)(15));
 			// Container child hbox5.Gtk.Box+BoxChild
 			this.inDobavljacId = new global::Gtk.Entry ();
 			this.inDobavljacId.WidthRequest = 50;
 			this.inDobavljacId.CanFocus = true;
 			this.inDobavljacId.Name = "inDobavljacId";
-			this.inDobavljacId.IsEditable = true;
+			this.inDobavljacId.IsEditable = false;
 			this.inDobavljacId.InvisibleChar = '•';
 			this.hbox5.Add (this.inDobavljacId);
-			global::Gtk.Box.BoxChild w17 = ((global::Gtk.Box.BoxChild)(this.hbox5 [this.inDobavljacId]));
-			w17.Position = 1;
-			w17.Expand = false;
+			global::Gtk.Box.BoxChild w18 = ((global::Gtk.Box.BoxChild)(this.hbox5 [this.inDobavljacId]));
+			w18.Position = 1;
+			w18.Expand = false;
 			// Container child hbox5.Gtk.Box+BoxChild
 			this.inDobavljacNaziv = new global::Gtk.Entry ();
 			this.inDobavljacNaziv.WidthRequest = 200;
 			this.inDobavljacNaziv.CanFocus = true;
 			this.inDobavljacNaziv.Name = "inDobavljacNaziv";
-			this.inDobavljacNaziv.IsEditable = true;
+			this.inDobavljacNaziv.IsEditable = false;
 			this.inDobavljacNaziv.InvisibleChar = '•';
 			this.hbox5.Add (this.inDobavljacNaziv);
-			global::Gtk.Box.BoxChild w18 = ((global::Gtk.Box.BoxChild)(this.hbox5 [this.inDobavljacNaziv]));
-			w18.Position = 2;
-			w18.Expand = false;
-			this.vbox1.Add (this.hbox5);
-			global::Gtk.Box.BoxChild w19 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hbox5]));
-			w19.Position = 4;
+			global::Gtk.Box.BoxChild w19 = ((global::Gtk.Box.BoxChild)(this.hbox5 [this.inDobavljacNaziv]));
+			w19.Position = 2;
 			w19.Expand = false;
-			w19.Fill = false;
-			w19.Padding = ((uint)(5));
+			// Container child hbox5.Gtk.Box+BoxChild
+			this.btnPronadjiDobavljaca = new global::Gtk.Button ();
+			this.btnPronadjiDobavljaca.CanFocus = true;
+			this.btnPronadjiDobavljaca.Name = "btnPronadjiDobavljaca";
+			this.btnPronadjiDobavljaca.UseUnderline = true;
+			this.btnPronadjiDobavljaca.Label = global::Mono.Unix.Catalog.GetString ("Pronađi...");
+			this.hbox5.Add (this.btnPronadjiDobavljaca);
+			global::Gtk.Box.BoxChild w20 = ((global::Gtk.Box.BoxChild)(this.hbox5 [this.btnPronadjiDobavljaca]));
+			w20.Position = 3;
+			w20.Expand = false;
+			w20.Fill = false;
+			w20.Padding = ((uint)(15));
+			this.vbox1.Add (this.hbox5);
+			global::Gtk.Box.BoxChild w21 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hbox5]));
+			w21.Position = 4;
+			w21.Expand = false;
+			w21.Fill = false;
+			w21.Padding = ((uint)(5));
 			// Container child vbox1.Gtk.Box+BoxChild
 			this.hbox6 = new global::Gtk.HBox ();
 			this.hbox6.Name = "hbox6";
@@ -280,40 +336,174 @@ namespace MyStockManager
 			this.label6.Xalign = 0F;
 			this.label6.LabelProp = global::Mono.Unix.Catalog.GetString ("Zaposlenik:");
 			this.hbox6.Add (this.label6);
-			global::Gtk.Box.BoxChild w20 = ((global::Gtk.Box.BoxChild)(this.hbox6 [this.label6]));
-			w20.Position = 0;
-			w20.Expand = false;
-			w20.Fill = false;
-			w20.Padding = ((uint)(15));
+			global::Gtk.Box.BoxChild w22 = ((global::Gtk.Box.BoxChild)(this.hbox6 [this.label6]));
+			w22.Position = 0;
+			w22.Expand = false;
+			w22.Fill = false;
+			w22.Padding = ((uint)(15));
 			// Container child hbox6.Gtk.Box+BoxChild
 			this.inZaposlenik = new global::Gtk.Entry ();
 			this.inZaposlenik.WidthRequest = 255;
 			this.inZaposlenik.CanFocus = true;
 			this.inZaposlenik.Name = "inZaposlenik";
-			this.inZaposlenik.IsEditable = true;
+			this.inZaposlenik.IsEditable = false;
 			this.inZaposlenik.InvisibleChar = '•';
 			this.hbox6.Add (this.inZaposlenik);
-			global::Gtk.Box.BoxChild w21 = ((global::Gtk.Box.BoxChild)(this.hbox6 [this.inZaposlenik]));
-			w21.Position = 1;
-			w21.Expand = false;
+			global::Gtk.Box.BoxChild w23 = ((global::Gtk.Box.BoxChild)(this.hbox6 [this.inZaposlenik]));
+			w23.Position = 1;
+			w23.Expand = false;
+			// Container child hbox6.Gtk.Box+BoxChild
+			this.btnPronadjiZaposlenika = new global::Gtk.Button ();
+			this.btnPronadjiZaposlenika.CanFocus = true;
+			this.btnPronadjiZaposlenika.Name = "btnPronadjiZaposlenika";
+			this.btnPronadjiZaposlenika.UseUnderline = true;
+			this.btnPronadjiZaposlenika.Label = global::Mono.Unix.Catalog.GetString ("Pronađi...");
+			this.hbox6.Add (this.btnPronadjiZaposlenika);
+			global::Gtk.Box.BoxChild w24 = ((global::Gtk.Box.BoxChild)(this.hbox6 [this.btnPronadjiZaposlenika]));
+			w24.Position = 2;
+			w24.Expand = false;
+			w24.Fill = false;
+			w24.Padding = ((uint)(15));
 			this.vbox1.Add (this.hbox6);
-			global::Gtk.Box.BoxChild w22 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hbox6]));
-			w22.Position = 5;
-			w22.Expand = false;
-			w22.Fill = false;
-			w22.Padding = ((uint)(5));
+			global::Gtk.Box.BoxChild w25 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hbox6]));
+			w25.Position = 5;
+			w25.Expand = false;
+			w25.Fill = false;
+			w25.Padding = ((uint)(5));
 			// Container child vbox1.Gtk.Box+BoxChild
+			this.hbox8 = new global::Gtk.HBox ();
+			this.hbox8.Name = "hbox8";
+			this.hbox8.Spacing = 6;
+			// Container child hbox8.Gtk.Box+BoxChild
+			this.label10 = new global::Gtk.Label ();
+			this.label10.WidthRequest = 150;
+			this.label10.Name = "label10";
+			this.label10.Xalign = 0F;
+			this.label10.LabelProp = global::Mono.Unix.Catalog.GetString ("Stavke primke:");
+			this.hbox8.Add (this.label10);
+			global::Gtk.Box.BoxChild w26 = ((global::Gtk.Box.BoxChild)(this.hbox8 [this.label10]));
+			w26.Position = 0;
+			w26.Expand = false;
+			w26.Fill = false;
+			w26.Padding = ((uint)(15));
+			// Container child hbox8.Gtk.Box+BoxChild
+			this.btnPronadjiStavku = new global::Gtk.Button ();
+			this.btnPronadjiStavku.CanFocus = true;
+			this.btnPronadjiStavku.Name = "btnPronadjiStavku";
+			this.btnPronadjiStavku.UseUnderline = true;
+			this.btnPronadjiStavku.Label = global::Mono.Unix.Catalog.GetString (" Pronađi artikl... ");
+			this.hbox8.Add (this.btnPronadjiStavku);
+			global::Gtk.Box.BoxChild w27 = ((global::Gtk.Box.BoxChild)(this.hbox8 [this.btnPronadjiStavku]));
+			w27.Position = 1;
+			w27.Expand = false;
+			w27.Fill = false;
+			this.vbox1.Add (this.hbox8);
+			global::Gtk.Box.BoxChild w28 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hbox8]));
+			w28.Position = 6;
+			w28.Expand = false;
+			w28.Fill = false;
+			w28.Padding = ((uint)(10));
+			// Container child vbox1.Gtk.Box+BoxChild
+			this.hbox10 = new global::Gtk.HBox ();
+			this.hbox10.Name = "hbox10";
+			this.hbox10.Spacing = 6;
+			// Container child hbox10.Gtk.Box+BoxChild
 			this.label7 = new global::Gtk.Label ();
 			this.label7.Name = "label7";
-			this.label7.Xpad = 15;
 			this.label7.Xalign = 0F;
-			this.label7.LabelProp = global::Mono.Unix.Catalog.GetString ("Stavke primke:");
-			this.vbox1.Add (this.label7);
-			global::Gtk.Box.BoxChild w23 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.label7]));
-			w23.Position = 6;
-			w23.Expand = false;
-			w23.Fill = false;
-			w23.Padding = ((uint)(10));
+			this.label7.LabelProp = global::Mono.Unix.Catalog.GetString ("Šifra artikla");
+			this.hbox10.Add (this.label7);
+			global::Gtk.Box.BoxChild w29 = ((global::Gtk.Box.BoxChild)(this.hbox10 [this.label7]));
+			w29.Position = 0;
+			w29.Expand = false;
+			w29.Fill = false;
+			w29.Padding = ((uint)(30));
+			// Container child hbox10.Gtk.Box+BoxChild
+			this.label11 = new global::Gtk.Label ();
+			this.label11.Name = "label11";
+			this.label11.Xalign = 0F;
+			this.label11.LabelProp = global::Mono.Unix.Catalog.GetString ("Naziv artikla");
+			this.hbox10.Add (this.label11);
+			global::Gtk.Box.BoxChild w30 = ((global::Gtk.Box.BoxChild)(this.hbox10 [this.label11]));
+			w30.Position = 1;
+			w30.Expand = false;
+			w30.Fill = false;
+			w30.Padding = ((uint)(5));
+			// Container child hbox10.Gtk.Box+BoxChild
+			this.label12 = new global::Gtk.Label ();
+			this.label12.Name = "label12";
+			this.label12.Xalign = 0F;
+			this.label12.LabelProp = global::Mono.Unix.Catalog.GetString ("Količina");
+			this.hbox10.Add (this.label12);
+			global::Gtk.Box.BoxChild w31 = ((global::Gtk.Box.BoxChild)(this.hbox10 [this.label12]));
+			w31.Position = 2;
+			w31.Expand = false;
+			w31.Fill = false;
+			w31.Padding = ((uint)(120));
+			this.vbox1.Add (this.hbox10);
+			global::Gtk.Box.BoxChild w32 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hbox10]));
+			w32.Position = 7;
+			w32.Expand = false;
+			w32.Fill = false;
+			// Container child vbox1.Gtk.Box+BoxChild
+			this.hbox9 = new global::Gtk.HBox ();
+			this.hbox9.Name = "hbox9";
+			this.hbox9.Spacing = 6;
+			// Container child hbox9.Gtk.Box+BoxChild
+			this.outIdArtikla = new global::Gtk.Entry ();
+			this.outIdArtikla.WidthRequest = 80;
+			this.outIdArtikla.CanFocus = true;
+			this.outIdArtikla.Name = "outIdArtikla";
+			this.outIdArtikla.IsEditable = false;
+			this.outIdArtikla.InvisibleChar = '•';
+			this.hbox9.Add (this.outIdArtikla);
+			global::Gtk.Box.BoxChild w33 = ((global::Gtk.Box.BoxChild)(this.hbox9 [this.outIdArtikla]));
+			w33.Position = 0;
+			w33.Expand = false;
+			w33.Fill = false;
+			w33.Padding = ((uint)(30));
+			// Container child hbox9.Gtk.Box+BoxChild
+			this.outNazivArtikla = new global::Gtk.Entry ();
+			this.outNazivArtikla.WidthRequest = 200;
+			this.outNazivArtikla.CanFocus = true;
+			this.outNazivArtikla.Name = "outNazivArtikla";
+			this.outNazivArtikla.IsEditable = false;
+			this.outNazivArtikla.InvisibleChar = '•';
+			this.hbox9.Add (this.outNazivArtikla);
+			global::Gtk.Box.BoxChild w34 = ((global::Gtk.Box.BoxChild)(this.hbox9 [this.outNazivArtikla]));
+			w34.Position = 1;
+			w34.Expand = false;
+			w34.Fill = false;
+			// Container child hbox9.Gtk.Box+BoxChild
+			this.inKolicina = new global::Gtk.Entry ();
+			this.inKolicina.WidthRequest = 80;
+			this.inKolicina.CanFocus = true;
+			this.inKolicina.Name = "inKolicina";
+			this.inKolicina.Text = global::Mono.Unix.Catalog.GetString ("1");
+			this.inKolicina.IsEditable = true;
+			this.inKolicina.InvisibleChar = '•';
+			this.hbox9.Add (this.inKolicina);
+			global::Gtk.Box.BoxChild w35 = ((global::Gtk.Box.BoxChild)(this.hbox9 [this.inKolicina]));
+			w35.Position = 2;
+			w35.Expand = false;
+			w35.Fill = false;
+			w35.Padding = ((uint)(15));
+			// Container child hbox9.Gtk.Box+BoxChild
+			this.btnDodajStavku = new global::Gtk.Button ();
+			this.btnDodajStavku.CanFocus = true;
+			this.btnDodajStavku.Name = "btnDodajStavku";
+			this.btnDodajStavku.UseUnderline = true;
+			this.btnDodajStavku.Label = global::Mono.Unix.Catalog.GetString (" Dodaj stavku ");
+			this.hbox9.Add (this.btnDodajStavku);
+			global::Gtk.Box.BoxChild w36 = ((global::Gtk.Box.BoxChild)(this.hbox9 [this.btnDodajStavku]));
+			w36.Position = 3;
+			w36.Expand = false;
+			w36.Fill = false;
+			this.vbox1.Add (this.hbox9);
+			global::Gtk.Box.BoxChild w37 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hbox9]));
+			w37.Position = 8;
+			w37.Expand = false;
+			w37.Fill = false;
 			// Container child vbox1.Gtk.Box+BoxChild
 			this.GtkScrolledWindow = new global::Gtk.ScrolledWindow ();
 			this.GtkScrolledWindow.Name = "GtkScrolledWindow";
@@ -325,22 +515,59 @@ namespace MyStockManager
 			this.outStavke.Name = "outStavke";
 			this.GtkScrolledWindow.Add (this.outStavke);
 			this.vbox1.Add (this.GtkScrolledWindow);
-			global::Gtk.Box.BoxChild w25 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.GtkScrolledWindow]));
-			w25.Position = 7;
+			global::Gtk.Box.BoxChild w39 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.GtkScrolledWindow]));
+			w39.Position = 9;
 			// Container child vbox1.Gtk.Box+BoxChild
 			this.hbox7 = new global::Gtk.HBox ();
 			this.hbox7.Name = "hbox7";
 			this.hbox7.Spacing = 6;
+			// Container child hbox7.Gtk.Box+BoxChild
+			this.btnSpremi = new global::Gtk.Button ();
+			this.btnSpremi.CanFocus = true;
+			this.btnSpremi.Name = "btnSpremi";
+			this.btnSpremi.UseUnderline = true;
+			this.btnSpremi.Label = global::Mono.Unix.Catalog.GetString (" Spremi ");
+			this.hbox7.Add (this.btnSpremi);
+			global::Gtk.Box.BoxChild w40 = ((global::Gtk.Box.BoxChild)(this.hbox7 [this.btnSpremi]));
+			w40.PackType = ((global::Gtk.PackType)(1));
+			w40.Position = 1;
+			w40.Expand = false;
+			w40.Fill = false;
+			w40.Padding = ((uint)(15));
+			// Container child hbox7.Gtk.Box+BoxChild
+			this.btnOdustani = new global::Gtk.Button ();
+			this.btnOdustani.CanFocus = true;
+			this.btnOdustani.Name = "btnOdustani";
+			this.btnOdustani.UseUnderline = true;
+			this.btnOdustani.Label = global::Mono.Unix.Catalog.GetString ("Odustani");
+			this.hbox7.Add (this.btnOdustani);
+			global::Gtk.Box.BoxChild w41 = ((global::Gtk.Box.BoxChild)(this.hbox7 [this.btnOdustani]));
+			w41.PackType = ((global::Gtk.PackType)(1));
+			w41.Position = 2;
+			w41.Expand = false;
+			w41.Fill = false;
+			w41.Padding = ((uint)(15));
 			this.vbox1.Add (this.hbox7);
-			global::Gtk.Box.BoxChild w26 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hbox7]));
-			w26.Position = 8;
+			global::Gtk.Box.BoxChild w42 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hbox7]));
+			w42.Position = 10;
+			w42.Expand = false;
+			w42.Fill = false;
+			w42.Padding = ((uint)(15));
 			this.Add (this.vbox1);
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
 			}
-			this.DefaultWidth = 611;
-			this.DefaultHeight = 671;
+			this.DefaultWidth = 709;
+			this.DefaultHeight = 732;
+			this.btnPronadjiStavku.Hide ();
 			this.Show ();
+			this.btnPronadjiPrijevoznika.Clicked += new global::System.EventHandler (this.btnPronadjiPrijevoznika_onClick);
+			this.btnPronadjiDobavljaca.Clicked += new global::System.EventHandler (this.btnPronadjiDobavljaca_onClick);
+			this.btnPronadjiZaposlenika.Clicked += new global::System.EventHandler (this.btnPronadjiZaposlenika_onClick);
+			this.btnPronadjiStavku.Clicked += new global::System.EventHandler (this.btnPronadjiArtikl_onClick);
+			this.btnDodajStavku.Clicked += new global::System.EventHandler (this.btnDodajStavku_onClick);
+			this.btnOdustani.Clicked += new global::System.EventHandler (this.btnZatvori_onClick);
+			this.btnSpremi.Clicked += new global::System.EventHandler (this.btnSpremi_onClick);
 		}
 	}
 }

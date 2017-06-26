@@ -1,17 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
+using Gtk;
 
 namespace MyStockManager
 {
 	public partial class DobavljacWindow : Gtk.Window
 	{
 		Gtk.NodeStore store = null;
+		private int Opcija;
+		public DobavljacTreeNode odabraniDobavljac = null;
 
-		public DobavljacWindow () :
+		public DobavljacWindow (int o=0) :
 			base (Gtk.WindowType.Toplevel)
 		{
 			this.Build ();
 			prepareNodeView ();
+
+			Opcija = o;
+			if (Opcija == 1) {
+				onemoguciGumbe ();
+			}
+		}
+
+		private void onemoguciGumbe() {
+			hbox1.Visible = false;
+			btnOK.Visible = true;
 		}
 
 		private Gtk.NodeStore getStore() {
@@ -44,6 +57,15 @@ namespace MyStockManager
 			this.nodeview1.ShowAll ();
 		}
 
+		private bool isRowSelected() {
+			if ((MyStockManager.DobavljacTreeNode)nodeview1.NodeSelection.SelectedNode != null) {
+				return true;
+			}
+			else {
+				General.GenerateMessageDialog (this, null, "Upozorenje", "Potrebno je označiti dobavljača.", MessageType.Warning);
+				return false;
+			}
+		}
 
 		protected void btnZatvori_onClick (object sender, EventArgs e)
 		{
@@ -66,45 +88,54 @@ namespace MyStockManager
 			throw new NotImplementedException ();
 		}
 
-
-
-
-		[Gtk.TreeNode (ListOnly=true)]
-		public class DobavljacTreeNode : Gtk.TreeNode {
-
-			public DobavljacTreeNode (Dobavljac d)
-			{
-				Id = d.Id;
-				Naziv = d.Naziv;
-				Kontakt = d.Kontakt;
-				Telefon = d.Telefon;
-				Email = d.Email;
-				IdMjesto = d.IdMjesto;
-				NazivMjesta = d.NazivMjesta;
+		protected void btnOK_onClick (object sender, EventArgs e)
+		{
+			if (isRowSelected ()) {
+				odabraniDobavljac = (MyStockManager.DobavljacTreeNode)nodeview1.NodeSelection.SelectedNode;
+				this.Destroy ();
 			}
-
-			[Gtk.TreeNodeValue (Column=0)]
-			public int Id { set; get;}
-
-			[Gtk.TreeNodeValue (Column=1)]
-			public String Naziv { set; get;}
-
-			[Gtk.TreeNodeValue (Column=2)]
-			public String Kontakt { set; get;}
-
-			[Gtk.TreeNodeValue (Column=3)]
-			public String Telefon { set; get;}
-
-			[Gtk.TreeNodeValue (Column=4)]
-			public String Email { set; get;}
-
-			[Gtk.TreeNodeValue (Column=5)]
-			public int IdMjesto { set; get;}
-
-			[Gtk.TreeNodeValue (Column=6)]
-			public String NazivMjesta { set; get;}
-
 		}
+
+
+
+
+	}
+
+	[Gtk.TreeNode (ListOnly=true)]
+	public class DobavljacTreeNode : Gtk.TreeNode {
+
+		public DobavljacTreeNode (Dobavljac d)
+		{
+			Id = d.Id;
+			Naziv = d.Naziv;
+			Kontakt = d.Kontakt;
+			Telefon = d.Telefon;
+			Email = d.Email;
+			IdMjesto = d.IdMjesto;
+			NazivMjesta = d.NazivMjesta;
+		}
+
+		[Gtk.TreeNodeValue (Column=0)]
+		public int Id { set; get;}
+
+		[Gtk.TreeNodeValue (Column=1)]
+		public String Naziv { set; get;}
+
+		[Gtk.TreeNodeValue (Column=2)]
+		public String Kontakt { set; get;}
+
+		[Gtk.TreeNodeValue (Column=3)]
+		public String Telefon { set; get;}
+
+		[Gtk.TreeNodeValue (Column=4)]
+		public String Email { set; get;}
+
+		[Gtk.TreeNodeValue (Column=5)]
+		public int IdMjesto { set; get;}
+
+		[Gtk.TreeNodeValue (Column=6)]
+		public String NazivMjesta { set; get;}
+
 	}
 }
 
