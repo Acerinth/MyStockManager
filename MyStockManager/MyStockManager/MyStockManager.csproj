@@ -103,6 +103,9 @@
     <Compile Include="Stavka.cs" />
     <Compile Include="PrimkaNewDetailsWindow.cs" />
     <Compile Include="gtk-gui\MyStockManager.PrimkaNewDetailsWindow.cs" />
+    <Compile Include="Evidencija.cs" />
+    <Compile Include="EvidencijaWindow.cs" />
+    <Compile Include="gtk-gui\MyStockManager.EvidencijaWindow.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

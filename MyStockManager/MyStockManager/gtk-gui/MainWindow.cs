@@ -128,6 +128,7 @@ public partial class MainWindow
 		this.MjestaAction.Activated += new global::System.EventHandler (this.mjesta_onClick);
 		this.PregledAction.Activated += new global::System.EventHandler (this.onClick_Pregled);
 		this.KategorijeAction.Activated += new global::System.EventHandler (this.btnKategorije_onClick);
+		this.EvidencijaPromjenaAction.Activated += new global::System.EventHandler (this.evidencijaPromjena_onClick);
 		this.IzlazAction.Activated += new global::System.EventHandler (this.onClick_Izlaz);
 	}
 }

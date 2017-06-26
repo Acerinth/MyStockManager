@@ -74,4 +74,11 @@ public partial class MainWindow: Gtk.Window
 		winPrimka.Show ();
 	}
 
+	protected void evidencijaPromjena_onClick (object sender, EventArgs e)
+	{
+		MyStockManager.EvidencijaWindow winEvidencija = new MyStockManager.EvidencijaWindow ();
+		winEvidencija.WindowPosition = WindowPosition.CenterAlways;
+		winEvidencija.Show ();
+	}
+
 }
