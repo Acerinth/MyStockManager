@@ -559,7 +559,6 @@ namespace MyStockManager
 			}
 			this.DefaultWidth = 709;
 			this.DefaultHeight = 732;
-			this.btnPronadjiStavku.Hide ();
 			this.Show ();
 			this.btnPronadjiPrijevoznika.Clicked += new global::System.EventHandler (this.btnPronadjiPrijevoznika_onClick);
 			this.btnPronadjiDobavljaca.Clicked += new global::System.EventHandler (this.btnPronadjiDobavljaca_onClick);
