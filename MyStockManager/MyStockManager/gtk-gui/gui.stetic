@@ -2346,7 +2346,7 @@
   </widget>
   <widget class="Gtk.Window" id="MyStockManager.OtpremnicaWindow" design-size="846 536">
     <property name="MemberName" />
-    <property name="Title" translatable="yes">OtpremnicaWindow</property>
+    <property name="Title" translatable="yes">Otpremnice</property>
     <property name="WindowPosition">CenterOnParent</property>
     <child>
       <widget class="Gtk.VBox" id="vbox2">
@@ -2888,6 +2888,7 @@
                 <property name="MemberName" />
                 <property name="WidthRequest">80</property>
                 <property name="CanFocus">True</property>
+                <property name="Text" translatable="yes">1</property>
                 <property name="IsEditable">True</property>
                 <property name="InvisibleChar">•</property>
               </widget>

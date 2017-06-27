@@ -18,7 +18,6 @@ namespace MyStockManager
 		ZaposlenikWindow winOdaberiZaposlenika = null;
 
 		private Artikl noviArtikl = null;
-		private Dobavljac noviDobavljac = null;
 		private Prijevoznik noviPrijevoznik = null;
 		private Zaposlenik noviZaposlenik = null;
 
@@ -31,13 +30,41 @@ namespace MyStockManager
 
 			OdabranaOtpremnicaId = odabrOtpId;
 
+			prepareNodeView ();
+
 			if (OdabranaOtpremnicaId != "") {
-				
+				this.Title = "Detalji otpremnice";
+				OdabranaOtpremnica = Otpremnica.DohvatiOtpremnicu (OdabranaOtpremnicaId);
+				onemoguciGumbe ();
+				popuniPodatke ();
+				refreshNodeView (OdabranaOtpremnica.ListaStavki);
 			} else {
+				this.Title = "Nova otpremnica";
 				listaStavki = new List<Stavka> ();
-				prepareNodeView ();
 				outDatum.Text = DateTime.Now.ToString ("dd.MM.yyyy. HH:mm:ss");
 			}
+
+		}
+
+		private void onemoguciGumbe() {
+			btnSpremi.Visible = false;
+			btnPronadjiArtikl.Visible = false;
+			btnPronadjiPrijevoznik.Visible = false;
+			btnPronadjiZaposlenika.Visible = false;
+			btnDodajStavku.Visible = false;
+			inBrojOtpremnice.IsEditable = false;
+			inKolicina.IsEditable = false;
+			hbox7.Visible = false;
+			hbox8.Visible = false;
+		}
+
+		private void popuniPodatke() {
+			inBrojOtpremnice.Text = OdabranaOtpremnica.IdOtpremnica;
+			outDatum.Text = OdabranaOtpremnica.Datum.ToString ("dd.MM.yyyy. HH:mm:ss");
+			outPrijevoznikId.Text = OdabranaOtpremnica.IdPrijevoznik.ToString ();
+			outPrijevoznikNaziv.Text = OdabranaOtpremnica.Prijevoznik.Naziv;
+			inBrojNarudzbeKupca.Text = OdabranaOtpremnica.BrojNarudzbeKupca;
+			outZaposlenik.Text = OdabranaOtpremnica.Zaposlenik.ToString ();
 
 		}
 

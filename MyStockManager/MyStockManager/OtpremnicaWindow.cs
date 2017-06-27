@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Gtk;
 
 namespace MyStockManager
 {
@@ -43,6 +44,15 @@ namespace MyStockManager
 			this.nodeview1.ShowAll ();
 		}
 
+		private bool isRowSelected() {
+			if ((MyStockManager.OtpremnicaTreeNode)nodeview1.NodeSelection.SelectedNode != null) {
+				return true;
+			}
+			else {
+				General.GenerateMessageDialog (this, null, "Upozorenje", "Potrebno je označiti dokument.", MessageType.Warning);
+				return false;
+			}
+		}
 
 		protected void btnZatvori_onClick (object sender, EventArgs e)
 		{
@@ -63,9 +73,13 @@ namespace MyStockManager
 
 		protected void btnDetaljiOtpremnice_onClick (object sender, EventArgs e)
 		{
-			MyStockManager.OtpremnicaNewDetailsWindow winDetaljiOtpremnica = new OtpremnicaNewDetailsWindow ();
-			winDetaljiOtpremnica.WindowPosition = Gtk.WindowPosition.CenterAlways;
-			winDetaljiOtpremnica.Show ();
+			if (isRowSelected ()) {
+				OtpremnicaTreeNode otn = (MyStockManager.OtpremnicaTreeNode)nodeview1.NodeSelection.SelectedNode;
+				MyStockManager.OtpremnicaNewDetailsWindow winDetaljiOtpremnica = new OtpremnicaNewDetailsWindow (otn.IdOtpremnica);
+				winDetaljiOtpremnica.WindowPosition = Gtk.WindowPosition.CenterAlways;
+				winDetaljiOtpremnica.Show ();
+			}
+
 		}
 	}
 

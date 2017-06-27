@@ -407,6 +407,7 @@ namespace MyStockManager
 			this.inKolicina.WidthRequest = 80;
 			this.inKolicina.CanFocus = true;
 			this.inKolicina.Name = "inKolicina";
+			this.inKolicina.Text = global::Mono.Unix.Catalog.GetString ("1");
 			this.inKolicina.IsEditable = true;
 			this.inKolicina.InvisibleChar = '•';
 			this.hbox8.Add (this.inKolicina);

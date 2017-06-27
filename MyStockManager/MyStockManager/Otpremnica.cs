@@ -54,6 +54,28 @@ namespace MyStockManager
 
 		}
 
+		private void dohvatiPodatke() {
+			Zaposlenik = Zaposlenik.DohvatiZaposlenika (IdZaposlenik);
+			Prijevoznik = Prijevoznik.DohvatiPrijevoznika (IdPrijevoznik);
+		}
+
+		private void dohvatiStavke() {
+			ListaStavki = Stavka.DohvatiStavke (IdOtpremnica, 1);
+		}
+
+		public static Otpremnica DohvatiOtpremnicu(String idOtpremnica) {
+			String sqlUpit = "SELECT * FROM otpremnica WHERE id_otpremnica = '" + idOtpremnica + "'";
+			NpgsqlDataReader dr = DatabaseConnection.Instance.getDataReader (sqlUpit);
+			Otpremnica o = null;
+			if (dr.Read ()) {
+				o = new Otpremnica (dr);
+			}
+			dr.Close ();
+			o.dohvatiPodatke ();
+			o.dohvatiStavke ();
+			return o;
+		}
+
 		public static List<Otpremnica> DohvatiOtpremnice() {
 			String sqlUpit = "SELECT * FROM otpremnica";
 			NpgsqlDataReader dr = DatabaseConnection.Instance.getDataReader (sqlUpit);

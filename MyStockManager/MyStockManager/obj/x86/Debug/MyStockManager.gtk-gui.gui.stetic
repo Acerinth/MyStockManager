@@ -2888,6 +2888,7 @@
                 <property name="MemberName" />
                 <property name="WidthRequest">80</property>
                 <property name="CanFocus">True</property>
+                <property name="Text" translatable="yes">1</property>
                 <property name="IsEditable">True</property>
                 <property name="InvisibleChar">•</property>
               </widget>
