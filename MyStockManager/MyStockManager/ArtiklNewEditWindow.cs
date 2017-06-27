@@ -10,6 +10,8 @@ namespace MyStockManager
 		ArtiklTreeNode atn;
 		int idArtikl = 0;
 
+
+
 		public ArtiklNewEditWindow (int type = 0, ArtiklTreeNode artiklTreeNode = null) :
 			base (Gtk.WindowType.Toplevel)
 		{
@@ -118,8 +120,8 @@ namespace MyStockManager
 
 			a.Opis = txtOpis.Buffer.Text;
 
-			float cijena;
-			if (float.TryParse (txtCijena.Text.ToString (), out cijena)) {
+			decimal cijena;
+			if (decimal.TryParse (txtCijena.Text.ToString (), out cijena)) {
 				a.Cijena = cijena;
 			} else {
 				generateMessDialog (txtCijena, "Pogrešan unos", "Pogrešan unos cijene!", MessageType.Warning);

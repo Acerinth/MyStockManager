@@ -151,7 +151,7 @@ namespace MyStockManager
 			NazivKategorije = a.NazivKategorija;
 			Naziv = a.Naziv;
 			Opis = a.Opis;
-			Cijena = a.Cijena;
+			Cijena = a.Cijena.ToString ("F");
 			Stanje = a.Stanje;
 			ZalihaMin = a.ZalihaMin;
 			ZalihaMax = a.ZalihaMax;
@@ -174,7 +174,7 @@ namespace MyStockManager
 		public String Opis { set; get;}
 
 		[Gtk.TreeNodeValue (Column=5)]
-		public float Cijena { set; get;}
+		public String Cijena { set; get;}
 
 		[Gtk.TreeNodeValue (Column=6)]
 		public int Stanje { set; get;}

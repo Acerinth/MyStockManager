@@ -11,7 +11,7 @@ namespace MyStockManager
 		public String NazivKategorija { set; get; }
 		public String Naziv { set; get;}
 		public String Opis { set; get;}
-		public float Cijena { set; get;}
+		public decimal Cijena { set; get;}
 		public int Stanje { set; get;}
 		public int ZalihaMin { set; get; }
 		public int ZalihaMax { set; get; }
@@ -28,7 +28,7 @@ namespace MyStockManager
 				NazivKategorija = dr["naziv_kategorija"].ToString();
 				Naziv = dr["naziv"].ToString();
 				Opis = dr["opis"].ToString();
-				Cijena = float.Parse(dr ["cijena"].ToString());
+				Cijena = decimal.Parse(dr ["cijena"].ToString());
 				Stanje = int.Parse(dr ["stanje"].ToString());
 				ZalihaMin = int.Parse(dr["zaliha_min"].ToString());
 				ZalihaMax = int.Parse(dr["zaliha_max"].ToString());
