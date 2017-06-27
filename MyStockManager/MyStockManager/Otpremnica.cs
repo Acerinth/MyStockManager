@@ -15,8 +15,16 @@ namespace MyStockManager
 		public Zaposlenik Zaposlenik { set; get; }
 		public List<Stavka> ListaStavki { set; get; }
 
-		public Otpremnica ()
+		public Otpremnica (String idOtpr, DateTime dat, String brojNarKup, int idPrij, Prijevoznik p, int idZap, Zaposlenik z, List<Stavka> stavke)
 		{
+			IdOtpremnica = idOtpr;
+			BrojNarudzbeKupca = brojNarKup;
+			Datum = dat;
+			IdPrijevoznik = idPrij;
+			Prijevoznik = p;
+			IdZaposlenik = idZap;
+			Zaposlenik = z;
+			ListaStavki = stavke;
 		}
 
 		public Otpremnica (NpgsqlDataReader dr) {
@@ -27,6 +35,23 @@ namespace MyStockManager
 				IdPrijevoznik = int.Parse (dr ["id_prijevoznik"].ToString ());
 				IdZaposlenik = int.Parse (dr ["id_zaposlenik"].ToString ());
 			}
+		}
+
+		public int Spremi() {
+			String sqlUpit = "INSERT INTO otpremnica VALUES ('" + IdOtpremnica + "', '" + Datum.ToString ("dd.MM.yyyy. HH:mm:ss") + "', '" 
+				+ BrojNarudzbeKupca + "', " + IdPrijevoznik + ", " + IdZaposlenik + ")";
+			int success = DatabaseConnection.Instance.executeQuery (sqlUpit);
+			int generalSuccess = 1;
+
+			if (success == 1) {
+				foreach (Stavka s in ListaStavki) {
+					String sqlUpitStavke = "INSERT INTO stavke_otpremnice VALUES ('" + IdOtpremnica + "', " + s.IdArtikl + ", " + s.Kolicina + ")";
+					int stavkaSuccess = DatabaseConnection.Instance.executeQuery (sqlUpitStavke);
+					generalSuccess *= stavkaSuccess;
+				}
+			}
+			return generalSuccess;
+
 		}
 
 		public static List<Otpremnica> DohvatiOtpremnice() {

@@ -111,9 +111,11 @@ namespace MyStockManager
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
 			}
-			this.DefaultWidth = 648;
-			this.DefaultHeight = 488;
+			this.DefaultWidth = 846;
+			this.DefaultHeight = 536;
 			this.Show ();
+			this.btnNovaOtpremnica.Clicked += new global::System.EventHandler (this.btnNovaOtpremnica_onClick);
+			this.btnDetaljiOtpremnice.Clicked += new global::System.EventHandler (this.btnDetaljiOtpremnice_onClick);
 			this.btnZatvori.Clicked += new global::System.EventHandler (this.btnZatvori_onClick);
 		}
 	}

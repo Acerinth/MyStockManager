@@ -109,6 +109,8 @@
     <Compile Include="Otpremnica.cs" />
     <Compile Include="OtpremnicaWindow.cs" />
     <Compile Include="gtk-gui\MyStockManager.OtpremnicaWindow.cs" />
+    <Compile Include="OtpremnicaNewDetailsWindow.cs" />
+    <Compile Include="gtk-gui\MyStockManager.OtpremnicaNewDetailsWindow.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

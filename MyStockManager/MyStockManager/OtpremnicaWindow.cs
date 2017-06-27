@@ -26,6 +26,11 @@ namespace MyStockManager
 			return store;
 		}
 
+		private void refreshNodeView() {
+			this.store = null;
+			this.nodeview1.NodeStore = getStore ();
+		}
+
 		private void prepareNodeView() {
 			this.nodeview1.NodeStore = getStore ();
 
@@ -42,6 +47,25 @@ namespace MyStockManager
 		protected void btnZatvori_onClick (object sender, EventArgs e)
 		{
 			this.Destroy ();
+		}
+
+		protected void btnNovaOtpremnica_onClick (object sender, EventArgs e)
+		{
+			MyStockManager.OtpremnicaNewDetailsWindow winNovaOtpremnica = new OtpremnicaNewDetailsWindow ();
+			winNovaOtpremnica.WindowPosition = Gtk.WindowPosition.CenterAlways;
+			winNovaOtpremnica.Show ();
+			winNovaOtpremnica.Destroyed += new EventHandler (winNovaOtpremnica_Destroyed);
+		}
+
+		protected void winNovaOtpremnica_Destroyed(object sender, EventArgs e) {
+			refreshNodeView ();
+		}
+
+		protected void btnDetaljiOtpremnice_onClick (object sender, EventArgs e)
+		{
+			MyStockManager.OtpremnicaNewDetailsWindow winDetaljiOtpremnica = new OtpremnicaNewDetailsWindow ();
+			winDetaljiOtpremnica.WindowPosition = Gtk.WindowPosition.CenterAlways;
+			winDetaljiOtpremnica.Show ();
 		}
 	}
 

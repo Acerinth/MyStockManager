@@ -1,18 +1,16 @@
 ﻿<Properties StartupItem="MyStockManager/MyStockManager.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MyStockManager/PrimkaNewDetailsWindow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MyStockManager/OtpremnicaWindow.cs">
     <Files>
-      <File FileName="MyStockManager/MainWindow.cs" Line="1" Column="1" />
-      <File FileName="MyStockManager/PrimkaWindow.cs" Line="86" Column="23" />
-      <File FileName="MyStockManager/PrimkaNewDetailsWindow.cs" Line="78" Column="43" />
-      <File FileName="MyStockManager/Primka.cs" Line="23" Column="1" />
-      <File FileName="MyStockManager/ArtikliWindow.cs" Line="64" Column="3" />
+      <File FileName="MyStockManager/MainWindow.cs" Line="88" Column="25" />
+      <File FileName="MyStockManager/Primka.cs" Line="46" Column="112" />
+      <File FileName="MyStockManager/Otpremnica.cs" Line="24" Column="52" />
+      <File FileName="MyStockManager/OtpremnicaWindow.cs" Line="15" Column="23" />
+      <File FileName="MyStockManager/PrimkaWindow.cs" Line="24" Column="45" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/home/paula/TBP_Project/MyStockManager/MyStockManager/MyStockManager/Primka.cs" line="21" column="4" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
