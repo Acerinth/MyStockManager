@@ -61,7 +61,7 @@ namespace MyStockManager
 			this.btnUrediPrijevoznika.UseUnderline = true;
 			this.btnUrediPrijevoznika.Label = global::Mono.Unix.Catalog.GetString (" Uredi ");
 			global::Gtk.Image w3 = new global::Gtk.Image ();
-			w3.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-add", global::Gtk.IconSize.SmallToolbar);
+			w3.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-edit", global::Gtk.IconSize.SmallToolbar);
 			this.btnUrediPrijevoznika.Image = w3;
 			this.hbox1.Add (this.btnUrediPrijevoznika);
 			global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.btnUrediPrijevoznika]));

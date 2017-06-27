@@ -59,6 +59,7 @@ namespace MyStockManager
 			this.nodeview1.AppendColumn ("Jedinica mjere", new Gtk.CellRendererText (), "text", 9); 
 
 			this.nodeview1.ShowAll ();
+
 		}
 
 		private void refreshNodeView() {

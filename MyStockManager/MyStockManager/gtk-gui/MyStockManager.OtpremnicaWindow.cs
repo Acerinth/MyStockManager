@@ -25,7 +25,7 @@ namespace MyStockManager
 			global::Stetic.Gui.Initialize (this);
 			// Widget MyStockManager.OtpremnicaWindow
 			this.Name = "MyStockManager.OtpremnicaWindow";
-			this.Title = global::Mono.Unix.Catalog.GetString ("OtpremnicaWindow");
+			this.Title = global::Mono.Unix.Catalog.GetString ("Otpremnice");
 			this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 			// Container child MyStockManager.OtpremnicaWindow.Gtk.Container+ContainerChild
 			this.vbox2 = new global::Gtk.VBox ();

@@ -151,7 +151,7 @@
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Window" id="MyStockManager.ArtikliWindow" design-size="994 575">
+  <widget class="Gtk.Window" id="MyStockManager.ArtikliWindow" design-size="1016 682">
     <property name="MemberName" />
     <property name="Title" translatable="yes">Artikli</property>
     <property name="WindowPosition">CenterAlways</property>
@@ -1439,7 +1439,7 @@
                 <property name="MemberName" />
                 <property name="CanFocus">True</property>
                 <property name="Type">TextAndIcon</property>
-                <property name="Icon">stock:gtk-add SmallToolbar</property>
+                <property name="Icon">stock:gtk-edit SmallToolbar</property>
                 <property name="Label" translatable="yes"> Uredi </property>
                 <property name="UseUnderline">True</property>
               </widget>

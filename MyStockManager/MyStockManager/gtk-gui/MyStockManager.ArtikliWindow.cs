@@ -144,8 +144,8 @@ namespace MyStockManager
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
 			}
-			this.DefaultWidth = 994;
-			this.DefaultHeight = 575;
+			this.DefaultWidth = 1016;
+			this.DefaultHeight = 682;
 			this.btnOK.Hide ();
 			this.Show ();
 			this.btnNoviArtikl.Clicked += new global::System.EventHandler (this.btnNovi_onClick);

@@ -74,18 +74,17 @@ namespace MyStockManager
 
 		protected void btnNovi_onClick (object sender, EventArgs e)
 		{
-			//samo neka nova linija koda
-			throw new NotImplementedException ();
+			
 		}
 
 		protected void btnUredi_onClick (object sender, EventArgs e)
 		{
-			throw new NotImplementedException ();
+			
 		}
 
 		protected void btnObrisi_onClick (object sender, EventArgs e)
 		{
-			throw new NotImplementedException ();
+			
 		}
 
 		protected void btnOK_onClick (object sender, EventArgs e)

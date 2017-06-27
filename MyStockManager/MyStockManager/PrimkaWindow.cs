@@ -95,7 +95,7 @@ namespace MyStockManager
 		public PrimkaTreeNode (Primka p)
 		{
 			IdPrimka = p.IdPrimka;
-			Datum = p.Datum.ToLongDateString();
+			Datum = p.Datum.ToString ("dd.MM.yyyy. HH:mm:ss");
 			BrojDostavnice = p.BrojDostavnice;
 			NazivDobavljaca = p.Dobavljac.Naziv;
 			NazivPrijevoznika = p.Prijevoznik.Naziv;
