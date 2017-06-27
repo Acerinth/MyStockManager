@@ -81,4 +81,11 @@ public partial class MainWindow: Gtk.Window
 		winEvidencija.Show ();
 	}
 
+	protected void otpremnice_onClick (object sender, EventArgs e)
+	{
+		MyStockManager.OtpremnicaWindow winOtpremnice = new MyStockManager.OtpremnicaWindow ();
+		winOtpremnice.WindowPosition = WindowPosition.CenterAlways;
+		winOtpremnice.Show ();
+	}
+
 }

@@ -19,7 +19,7 @@ namespace MyStockManager
 			global::Stetic.Gui.Initialize (this);
 			// Widget MyStockManager.EvidencijaWindow
 			this.Name = "MyStockManager.EvidencijaWindow";
-			this.Title = global::Mono.Unix.Catalog.GetString ("EvidencijaWindow");
+			this.Title = global::Mono.Unix.Catalog.GetString ("Evidencija Promjena");
 			this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 			// Container child MyStockManager.EvidencijaWindow.Gtk.Container+ContainerChild
 			this.vbox1 = new global::Gtk.VBox ();

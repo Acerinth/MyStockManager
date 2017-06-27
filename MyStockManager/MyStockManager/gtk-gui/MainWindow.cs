@@ -122,6 +122,7 @@ public partial class MainWindow
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
 		this.PrimkeAction.Activated += new global::System.EventHandler (this.primke_onClick);
+		this.OtpremniceAction.Activated += new global::System.EventHandler (this.otpremnice_onClick);
 		this.DobavljaiAction.Activated += new global::System.EventHandler (this.dobavljaci_onClick);
 		this.PrijevozniciAction.Activated += new global::System.EventHandler (this.prijevoznici_onClick);
 		this.ZaposleniciAction.Activated += new global::System.EventHandler (this.zaposlenici_onClick);

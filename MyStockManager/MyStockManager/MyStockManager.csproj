@@ -106,6 +106,9 @@
     <Compile Include="Evidencija.cs" />
     <Compile Include="EvidencijaWindow.cs" />
     <Compile Include="gtk-gui\MyStockManager.EvidencijaWindow.cs" />
+    <Compile Include="Otpremnica.cs" />
+    <Compile Include="OtpremnicaWindow.cs" />
+    <Compile Include="gtk-gui\MyStockManager.OtpremnicaWindow.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
